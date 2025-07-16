@@ -1,0 +1,116 @@
+
+# Razorpay Refund to Wallet - Replit AI Agent Prompt
+
+## 🎯 Goal:
+Build a fully responsive **landing page** for Razorpay's **Refund to Wallet** feature targeted at Shopify merchants using Razorpay Checkout.
+
+---
+
+## 🌐 Page Type:
+- Single HTML page
+- Responsive for mobile, tablet, and desktop
+- Follow Razorpay’s visual brand system (see "Design System" section below)
+- Include TailwindCSS (or CSS class equivalents)
+
+---
+
+## 📌 Razorpay Design Guidelines (based on https://razorpay.com):
+
+- **Font**: Use **Inter** or **system-ui**. Light and Regular weights preferred.
+- **Color Scheme**:
+  - Primary Blue: `#2b84e0`
+  - Dark Blue: `#1c2d41`
+  - Accent: `#00a8ff`, `#e0f3ff`
+  - Neutral Text: Dark grey `#1a1a1a` on white background
+- **CTA Buttons**:
+  - Rounded, bold text, blue background with hover effect (`#1a74d2`)
+- **Cards**: Light shadow, rounded corners, hover effects
+- **Spacing**: Generous padding (`p-6`, `p-8`), clear hierarchy
+- **Icons**: Use emoji or simple Tailwind icons
+
+---
+
+## 🧭 Page Structure & Content
+
+### 1. Sticky Navigation Bar (Top)
+- Razorpay Logo (top left)
+- Menu items: `How it Works`, `Who it’s For`, `User Guide`, `Install App`
+- “Install App” is a blue CTA button on the right
+- Scroll-to-section behavior
+
+---
+
+### 2. Hero Section
+- **Headline**: `Turn Refunds into Repeat Customers — Instantly.`
+- **Subheading**: `Refund to Razorpay Wallet is now live for all Shopify merchants using Razorpay Checkout. No setup. No cost. Just faster refunds, better retention.`
+- **Merchant Logos** (row): Swiggy, Zomato, Decathlon, Thirdwave, Ferns N Petals (placeholders ok)
+- **Below logos**: “Trusted by leading brands. Now available for all Shopify merchants.”
+- **Primary CTA Button**:
+  - Text: “Install Razorpay Wallet App”
+  - Link: https://apps.shopify.com/razorpay-rewards-gift-cards
+
+---
+
+### 3. Why Refund to Wallet? (4-card grid)
+- ⚡ **Instant Refunds**: Customers get credited in seconds — no bank delay
+- 🔄 **Boost Retention**: Refunds = wallet credit = future purchases
+- 💰 **Zero Cost**: Free for Razorpay Checkout merchants
+- 🛍️ **Shopify Native**: Works directly from Shopify order page
+
+---
+
+### 4. How It Works (Steps + Screenshot Placeholder)
+- 1: Customer cancels/returns
+- 2: Merchant clicks "Refund to Wallet"
+- 3: Selects items, reason, restock, adds note
+- 4: Customer gets SMS, wallet updated instantly
+
+(Screenshot placeholder for refund modal)
+
+---
+
+### 5. Who It's For (Card-style use cases)
+- 👗 Fashion & Apparel: Retain post-return customers
+- 💄 Beauty & Wellness: Service recovery refunds
+- 🍟 QSRs / Cafes: Refunds for missing items
+- 🛍️ D2C Shopify Brands: Install and start in minutes
+
+---
+
+### 6. How to Get Started (Checklist Style)
+- ✅ Use Shopify
+- ✅ Use Razorpay Checkout
+- ✅ Install Razorpay Rewards & Wallets app
+- ✅ Connect your Razorpay merchant ID
+- ✅ Click “Refund to Wallet” on your order page. Done.
+
+---
+
+### 7. User Guide Callout
+📘 Need step-by-step help?
+
+Link: [User Guide for Refund to Wallet](#)
+
+---
+
+### 8. Final CTA Footer
+- **Headline**: “Start Using Refund to Wallet — It’s Free.”
+- **Button**: “Install Razorpay Wallet App”
+  - Link: https://apps.shopify.com/razorpay-rewards-gift-cards
+- **Subtext**: “Need help? Contact your Razorpay account manager or write to magic@razorpay.com”
+
+---
+
+## ✅ Notes for Replit Agent
+- Use clean layout with Razorpay color palette
+- Use system fonts like Inter or fallback sans-serif
+- Use TailwindCSS if possible (preferred)
+- Ensure section scroll behavior works from nav bar
+- Include simple placeholder images/logos/icons where needed
+
+---
+
+## 📎 Assets
+- Placeholder for modal screenshot (merchant to replace)
+- Logos for Swiggy, Zomato, Decathlon, Thirdwave, FNP (can be generic)
+- Install link: https://apps.shopify.com/razorpay-rewards-gift-cards
