@@ -3,6 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Menu, X, Check } from "lucide-react";
 import razorpayLogo from "@assets/image_1752737779222.png";
+import thirdWaveLogo from "@assets/image_1752742451146.png";
+import zomatoLogo from "@assets/zomato logo_1752742528720.png";
+import swiggyLogo from "@assets/Swiggy_logo_1752742528721.png";
+import twcLogo from "@assets/TWC_logo_without_R-01_1752742528721.png";
+import decathlonLogo from "@assets/Decathlon_1752742585148.png";
+import fnpLogo from "@assets/fnplogo_1752742615072.png";
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -127,36 +133,36 @@ export default function Home() {
               <div className="flex flex-wrap justify-center items-center gap-8 mb-4">
                 <div className="grayscale hover:grayscale-0 transition-all duration-300">
                   <img
-                    src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=120&h=60"
-                    alt="Merchant Logo"
+                    src={swiggyLogo}
+                    alt="Swiggy"
                     className="h-12 w-auto"
                   />
                 </div>
                 <div className="grayscale hover:grayscale-0 transition-all duration-300">
                   <img
-                    src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=120&h=60"
-                    alt="Merchant Logo"
+                    src={zomatoLogo}
+                    alt="Zomato"
                     className="h-12 w-auto"
                   />
                 </div>
                 <div className="grayscale hover:grayscale-0 transition-all duration-300">
                   <img
-                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=120&h=60"
-                    alt="Merchant Logo"
+                    src={decathlonLogo}
+                    alt="Decathlon"
                     className="h-12 w-auto"
                   />
                 </div>
                 <div className="grayscale hover:grayscale-0 transition-all duration-300">
                   <img
-                    src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=120&h=60"
-                    alt="Merchant Logo"
+                    src={thirdWaveLogo}
+                    alt="Third Wave Coffee"
                     className="h-12 w-auto"
                   />
                 </div>
                 <div className="grayscale hover:grayscale-0 transition-all duration-300">
                   <img
-                    src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=120&h=60"
-                    alt="Merchant Logo"
+                    src={fnpLogo}
+                    alt="Ferns N Petals"
                     className="h-12 w-auto"
                   />
                 </div>
