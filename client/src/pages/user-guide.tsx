@@ -13,7 +13,6 @@ export default function UserGuide() {
   const [activeSection, setActiveSection] = useState<string>("setup");
 
   const sections = [
-    { id: "index", title: "Index", icon: <FileText className="w-5 h-5" /> },
     { id: "setup", title: "Setup Instructions", icon: <CheckCircle className="w-5 h-5" /> },
     { id: "issuing", title: "Issuing Refunds", icon: <CreditCard className="w-5 h-5" /> },
     { id: "modal", title: "Refund Modal Guide", icon: <Package className="w-5 h-5" /> },
