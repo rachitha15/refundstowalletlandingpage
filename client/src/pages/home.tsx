@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Menu, X, Check, ArrowRight, ChevronDown, ChevronUp, ShoppingCart, Navigation, ClipboardList, Wallet, MessageCircle } from "lucide-react";
+import { Menu, X, Check, ArrowRight, ShoppingCart, Navigation, ClipboardList, Wallet, MessageCircle } from "lucide-react";
 import razorpayLogo from "@assets/image_1752737779222.png";
 import thirdWaveLogo from "@assets/image_1752742451146.png";
 import zomatoLogo from "@assets/zomato logo_1752742528720.png";
@@ -14,7 +14,6 @@ import demoVideo from "@assets/Final Video_1752744004263.mov";
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [expandedStep, setExpandedStep] = useState<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,63 +32,30 @@ export default function Home() {
     setIsMobileMenuOpen(false);
   };
 
-  const toggleStep = (stepNumber: number) => {
-    setExpandedStep(expandedStep === stepNumber ? null : stepNumber);
-  };
-
-  const steps = [
+  const timelineSteps = [
     {
       number: 1,
       icon: ShoppingCart,
       title: "Customer cancels/returns",
-      summary: "Customer initiates return or cancellation process",
-      details: [
-        "Customer contacts support or uses self-service portal",
-        "Return request is created with order details",
-        "Customer provides reason for return/cancellation",
-        "System validates return eligibility and timelines"
-      ]
+      description: "Customer initiates return or cancellation process"
     },
     {
       number: 2,
       icon: Navigation,
       title: "Navigate to Shopify orders page",
-      summary: "Choose More Actions > Wallet refund",
-      details: [
-        "Go to Shopify Admin > Orders section",
-        "Find the specific order requiring refund",
-        "Click 'More Actions' dropdown menu",
-        "Select 'Wallet refund' option from the list",
-        "System opens refund processing interface"
-      ]
+      description: "Choose More Actions > Wallet refund"
     },
     {
       number: 3,
       icon: ClipboardList,
       title: "Select items & add details",
-      summary: "Choose items, reason, restock option, add notes",
-      details: [
-        "Select specific items to refund from order",
-        "Choose refund reason from dropdown menu",
-        "Decide whether to restock items automatically",
-        "Add internal notes for record keeping",
-        "Review refund amount and calculations",
-        "Confirm all details before proceeding"
-      ]
+      description: "Choose items, reason, restock option, add notes"
     },
     {
       number: 4,
       icon: Wallet,
       title: "Instant wallet credit",
-      summary: "Customer gets SMS, wallet updated instantly",
-      details: [
-        "Refund processed immediately to customer wallet",
-        "SMS notification sent to customer's phone",
-        "Customer receives wallet credit confirmation",
-        "Wallet balance updated in real-time",
-        "Customer can use credit for future purchases",
-        "Transaction history updated for both parties"
-      ]
+      description: "Customer gets SMS, wallet updated instantly"
     }
   ];
 
@@ -293,70 +259,99 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-razorpay-dark mb-4">How It Works</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Click on each step to explore the detailed process</p>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Simple, seamless refund process in 4 easy steps</p>
           </div>
           
-          <div className="max-w-4xl mx-auto mb-16">
-            {steps.map((step, index) => {
-              const IconComponent = step.icon;
-              const isExpanded = expandedStep === step.number;
+          {/* Timeline - Desktop */}
+          <div className="hidden md:block max-w-6xl mx-auto mb-16">
+            <div className="relative">
+              {/* Timeline Line */}
+              <div className="absolute top-16 left-0 w-full h-0.5 bg-gray-300 z-0">
+                <div className="absolute inset-0 bg-gradient-to-r from-razorpay-blue to-razorpay-cta h-full"></div>
+              </div>
               
-              return (
-                <Card 
-                  key={step.number} 
-                  className={`mb-4 cursor-pointer transition-all duration-300 hover:shadow-lg ${
-                    isExpanded ? 'ring-2 ring-razorpay-blue shadow-xl' : ''
-                  }`}
-                  onClick={() => toggleStep(step.number)}
-                >
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4">
-                        <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold transition-all duration-300 ${
-                          isExpanded ? 'bg-razorpay-cta scale-110' : 'bg-razorpay-blue'
-                        }`}>
+              {/* Timeline Steps */}
+              <div className="relative flex justify-between items-start z-10">
+                {timelineSteps.map((step, index) => {
+                  const IconComponent = step.icon;
+                  const isLast = index === timelineSteps.length - 1;
+                  
+                  return (
+                    <div key={step.number} className="flex flex-col items-center text-center" style={{ width: '22%' }}>
+                      {/* Circle with Icon */}
+                      <div className="relative">
+                        <div className="w-16 h-16 bg-white border-4 border-razorpay-blue rounded-full flex items-center justify-center shadow-lg mb-4 hover:scale-110 transition-transform duration-300">
+                          <IconComponent className="w-7 h-7 text-razorpay-blue" />
+                        </div>
+                        {/* Step Number Badge */}
+                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-razorpay-cta text-white rounded-full flex items-center justify-center text-xs font-bold">
                           {step.number}
                         </div>
-                        <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
-                          isExpanded ? 'bg-razorpay-light text-razorpay-blue' : 'bg-gray-100 text-gray-600'
-                        }`}>
-                          <IconComponent className="w-5 h-5" />
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="mt-4">
+                        <h3 className="text-lg font-semibold text-razorpay-dark mb-2">
+                          {step.title}
+                        </h3>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          {step.description}
+                        </p>
+                      </div>
+                      
+                      {/* Arrow */}
+                      {!isLast && (
+                        <div className="absolute top-16 right-0 transform translate-x-1/2 -translate-y-1/2 z-20">
+                          <ArrowRight className="w-5 h-5 text-razorpay-blue" />
                         </div>
-                        <div className="flex-1">
-                          <h3 className={`text-lg font-semibold transition-colors duration-300 ${
-                            isExpanded ? 'text-razorpay-dark' : 'text-razorpay-dark'
-                          }`}>
-                            {step.title}
-                          </h3>
-                          <p className="text-gray-600 text-sm mt-1">{step.summary}</p>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+          
+          {/* Timeline - Mobile */}
+          <div className="md:hidden max-w-md mx-auto mb-16">
+            <div className="relative">
+              {/* Vertical Timeline Line */}
+              <div className="absolute left-8 top-0 w-0.5 bg-gray-300 h-full">
+                <div className="absolute inset-0 bg-gradient-to-b from-razorpay-blue to-razorpay-cta w-full"></div>
+              </div>
+              
+              {/* Mobile Timeline Steps */}
+              <div className="relative space-y-8">
+                {timelineSteps.map((step, index) => {
+                  const IconComponent = step.icon;
+                  
+                  return (
+                    <div key={step.number} className="flex items-start space-x-4">
+                      {/* Circle with Icon */}
+                      <div className="relative flex-shrink-0">
+                        <div className="w-16 h-16 bg-white border-4 border-razorpay-blue rounded-full flex items-center justify-center shadow-lg">
+                          <IconComponent className="w-7 h-7 text-razorpay-blue" />
+                        </div>
+                        {/* Step Number Badge */}
+                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-razorpay-cta text-white rounded-full flex items-center justify-center text-xs font-bold">
+                          {step.number}
                         </div>
                       </div>
-                      <div className={`transition-transform duration-300 ${
-                        isExpanded ? 'rotate-180' : ''
-                      }`}>
-                        <ChevronDown className="w-5 h-5 text-gray-400" />
+                      
+                      {/* Content */}
+                      <div className="flex-1 pt-3">
+                        <h3 className="text-lg font-semibold text-razorpay-dark mb-2">
+                          {step.title}
+                        </h3>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          {step.description}
+                        </p>
                       </div>
                     </div>
-                    
-                    {isExpanded && (
-                      <div className="mt-6 pl-16 transition-all duration-300">
-                        <div className="bg-razorpay-light rounded-lg p-4">
-                          <h4 className="font-semibold text-razorpay-dark mb-3">Step Details:</h4>
-                          <ul className="space-y-2">
-                            {step.details.map((detail, detailIndex) => (
-                              <li key={detailIndex} className="flex items-start space-x-2">
-                                <Check className="w-4 h-4 text-razorpay-blue mt-0.5 flex-shrink-0" />
-                                <span className="text-gray-700 text-sm">{detail}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                    )}
-                  </CardContent>
-                </Card>
-              );
-            })}
+                  );
+                })}
+              </div>
+            </div>
           </div>
           
           {/* Demo Video */}
