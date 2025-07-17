@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Menu, X, Check, ArrowRight } from "lucide-react";
@@ -60,12 +61,11 @@ export default function Home() {
                 >
                   Who it's For
                 </button>
-                <button
-                  onClick={() => scrollToSection('user-guide')}
-                  className="text-gray-700 hover:text-razorpay-blue px-3 py-2 text-sm font-medium transition-colors"
-                >
-                  User Guide
-                </button>
+                <Link href="/user-guide">
+                  <button className="text-gray-700 hover:text-razorpay-blue px-3 py-2 text-sm font-medium transition-colors">
+                    User Guide
+                  </button>
+                </Link>
                 <a
                   href="https://apps.shopify.com/razorpay-rewards-gift-cards"
                   className="bg-razorpay-cta text-white px-6 py-2 rounded text-sm font-semibold hover:bg-razorpay-cta transition-colors flex items-center gap-2"
@@ -102,12 +102,11 @@ export default function Home() {
               >
                 Who it's For
               </button>
-              <button
-                onClick={() => scrollToSection('user-guide')}
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-razorpay-blue w-full text-left"
-              >
-                User Guide
-              </button>
+              <Link href="/user-guide">
+                <button className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-razorpay-blue w-full text-left">
+                  User Guide
+                </button>
+              </Link>
               <a
                 href="https://apps.shopify.com/razorpay-rewards-gift-cards"
                 className="block mx-3 my-2 bg-razorpay-cta text-white px-6 py-2 rounded text-sm font-semibold text-center flex items-center justify-center gap-2"
