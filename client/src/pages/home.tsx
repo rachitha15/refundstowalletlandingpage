@@ -35,7 +35,7 @@ export default function Home() {
                 <img 
                   src={razorpayLogo} 
                   alt="Razorpay" 
-                  className="h-8 w-auto"
+                  className="h-10 w-auto"
                 />
               </div>
             </div>
