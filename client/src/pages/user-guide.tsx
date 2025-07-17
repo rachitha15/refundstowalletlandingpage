@@ -6,7 +6,6 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ArrowLeft, CheckCircle, AlertCircle, Phone, Package, CreditCard, FileText, Users, HelpCircle } from "lucide-react";
 import razorpayLogo from "@assets/image_1752737779222.png";
-import demoVideo from "@assets/Final Video_1752744004263.mov";
 
 export default function UserGuide() {
   const [activeSection, setActiveSection] = useState<string>("setup");
@@ -149,37 +148,7 @@ export default function UserGuide() {
               </CardContent>
             </Card>
 
-            {/* Index */}
-            <Card id="index">
-              <CardHeader>
-                <CardTitle className="text-xl text-razorpay-dark flex items-center gap-2">
-                  <FileText className="w-6 h-6" />
-                  Index
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-3">
-                    <h3 className="font-semibold text-razorpay-dark">Getting Started</h3>
-                    <ul className="space-y-2 text-gray-600">
-                      <li>• <button onClick={() => scrollToSection('setup')} className="text-razorpay-blue hover:underline">Setup Instructions</button></li>
-                      <li>• <button onClick={() => scrollToSection('issuing')} className="text-razorpay-blue hover:underline">Issuing Refunds</button></li>
-                      <li>• <button onClick={() => scrollToSection('modal')} className="text-razorpay-blue hover:underline">Refund Modal Guide</button></li>
-                    </ul>
-                  </div>
-                  <div className="space-y-3">
-                    <h3 className="font-semibold text-razorpay-dark">Operations & Support</h3>
-                    <ul className="space-y-2 text-gray-600">
-                      <li>• <button onClick={() => scrollToSection('errors')} className="text-razorpay-blue hover:underline">Error Handling</button></li>
-                      <li>• <button onClick={() => scrollToSection('reconciliation')} className="text-razorpay-blue hover:underline">Reconciliation</button></li>
-                      <li>• <button onClick={() => scrollToSection('notifications')} className="text-razorpay-blue hover:underline">Customer Notifications</button></li>
-                      <li>• <button onClick={() => scrollToSection('customer-experience')} className="text-razorpay-blue hover:underline">Customer Experience</button></li>
-                      <li>• <button onClick={() => scrollToSection('faqs')} className="text-razorpay-blue hover:underline">FAQs</button></li>
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+
 
             {/* Setup Instructions */}
             <Card id="setup">
@@ -350,6 +319,18 @@ export default function UserGuide() {
                     </ul>
                   </div>
                 </div>
+                
+                {/* Refund Modal Demo Video Placeholder */}
+                <div className="mt-8 text-center">
+                  <h3 className="text-lg font-semibold text-razorpay-dark mb-3">See the Refund Modal in Action</h3>
+                  <p className="text-gray-600 mb-4">Watch step-by-step demo of processing refund to customer's wallet</p>
+                  
+                  <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 mx-auto max-w-2xl">
+                    <Package className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+                    <p className="text-gray-500 font-medium">Refund Modal Demo Video</p>
+                    <p className="text-gray-400 text-sm mt-2">Video placeholder - will be replaced with actual demo</p>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
@@ -452,14 +433,11 @@ export default function UserGuide() {
                   <p className="text-gray-600 mb-4">Watch how customers can use their wallet balance during checkout</p>
                 </div>
                 
-                <video
-                  src={demoVideo}
-                  controls
-                  className="rounded-lg shadow-md mx-auto max-w-full h-auto"
-                  style={{ maxHeight: '400px' }}
-                >
-                  Your browser does not support the video tag.
-                </video>
+                <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 mx-auto max-w-2xl">
+                  <Users className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+                  <p className="text-gray-500 font-medium">Customer Experience Video</p>
+                  <p className="text-gray-400 text-sm mt-2">Video placeholder - will show wallet payment on Magic Checkout</p>
+                </div>
                 
                 <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
                   <p className="text-blue-800">
