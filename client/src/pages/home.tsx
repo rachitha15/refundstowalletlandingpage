@@ -245,7 +245,7 @@ export default function Home() {
             <div className="text-center">
               <div className="w-16 h-16 bg-razorpay-blue text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
               <h3 className="text-lg font-semibold text-razorpay-dark mb-2">Navigate to Shopify orders page</h3>
-              <p className="text-gray-600">Choose More Actions > Wallet refund</p>
+              <p className="text-gray-600">Choose More Actions &gt; Wallet refund</p>
             </div>
             
             <div className="text-center">
