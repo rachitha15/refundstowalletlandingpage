@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Menu, X, Check } from "lucide-react";
-import razorpayLogo from "@assets/Razorpay Logo - Light_1752736444871.png";
+import razorpayLogo from "@assets/image_1752737779222.png";
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
