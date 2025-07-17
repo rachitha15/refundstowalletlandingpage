@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Menu, X, Check } from "lucide-react";
+import { Menu, X, Check, ArrowRight } from "lucide-react";
 import razorpayLogo from "@assets/image_1752737779222.png";
 import thirdWaveLogo from "@assets/image_1752742451146.png";
 import zomatoLogo from "@assets/zomato logo_1752742528720.png";
@@ -67,9 +67,10 @@ export default function Home() {
                 </button>
                 <a
                   href="https://apps.shopify.com/razorpay-rewards-gift-cards"
-                  className="bg-razorpay-blue text-white px-6 py-2 rounded-lg text-sm font-semibold hover:bg-razorpay-blue transition-colors"
+                  className="bg-razorpay-blue text-white px-6 py-2 rounded-lg text-sm font-semibold hover:bg-razorpay-blue transition-colors flex items-center gap-2"
                 >
                   Install App
+                  <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
             </div>
@@ -108,9 +109,10 @@ export default function Home() {
               </button>
               <a
                 href="https://apps.shopify.com/razorpay-rewards-gift-cards"
-                className="block mx-3 my-2 bg-razorpay-blue text-white px-6 py-2 rounded-lg text-sm font-semibold text-center"
+                className="block mx-3 my-2 bg-razorpay-blue text-white px-6 py-2 rounded-lg text-sm font-semibold text-center flex items-center justify-center gap-2"
               >
                 Install App
+                <ArrowRight className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -172,9 +174,10 @@ export default function Home() {
             
             <a
               href="https://apps.shopify.com/razorpay-rewards-gift-cards"
-              className="inline-block bg-razorpay-blue text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-razorpay-blue transform hover:scale-105 transition-all duration-200 shadow-lg"
+              className="inline-flex items-center gap-3 bg-razorpay-blue text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-razorpay-blue transform hover:scale-105 transition-all duration-200 shadow-lg"
             >
               Install Razorpay Wallet App
+              <ArrowRight className="w-5 h-5" />
             </a>
           </div>
         </div>
@@ -393,9 +396,10 @@ export default function Home() {
           <p className="text-xl text-gray-300 mb-8">Transform your refund process and boost customer retention today</p>
           <a
             href="https://apps.shopify.com/razorpay-rewards-gift-cards"
-            className="inline-block bg-razorpay-blue text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-razorpay-blue transform hover:scale-105 transition-all duration-200 shadow-lg mb-6"
+            className="inline-flex items-center gap-3 bg-razorpay-blue text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-razorpay-blue transform hover:scale-105 transition-all duration-200 shadow-lg mb-6"
           >
             Install Razorpay Wallet App
+            <ArrowRight className="w-5 h-5" />
           </a>
           <p className="text-gray-400">
             Need help? Contact your Razorpay account manager or write to{' '}
