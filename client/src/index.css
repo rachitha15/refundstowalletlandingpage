@@ -26,6 +26,7 @@
   
   /* Razorpay Brand Colors */
   --razorpay-blue: hsl(207, 90%, 54%);
+  --razorpay-cta: #2f5eff;
   --razorpay-dark: hsl(208, 44%, 19%);
   --razorpay-accent: hsl(199, 100%, 50%);
   --razorpay-light: hsl(199, 100%, 94%);
@@ -86,6 +87,14 @@
     background-color: var(--razorpay-blue);
   }
   
+  .bg-razorpay-cta {
+    background-color: var(--razorpay-cta);
+  }
+  
+  .text-razorpay-cta {
+    color: var(--razorpay-cta);
+  }
+  
   .bg-razorpay-dark {
     background-color: var(--razorpay-dark);
   }
@@ -100,6 +109,10 @@
   
   .hover\:bg-razorpay-blue:hover {
     background-color: hsl(207, 90%, 48%);
+  }
+  
+  .hover\:bg-razorpay-cta:hover {
+    background-color: #1a4aff;
   }
   
   .border-razorpay-blue {
