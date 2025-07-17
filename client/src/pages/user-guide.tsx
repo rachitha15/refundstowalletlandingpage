@@ -7,6 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { ArrowLeft, CheckCircle, AlertCircle, Phone, Package, CreditCard, FileText, Users, HelpCircle } from "lucide-react";
 import razorpayLogo from "@assets/image_1752737779222.png";
 import refundModalVideo from "@assets/Refund modal experience_1752746292898.mov";
+import customerExperienceVideo from "@assets/payment_experience_1752746423953.mov";
 
 export default function UserGuide() {
   const [activeSection, setActiveSection] = useState<string>("setup");
@@ -437,11 +438,14 @@ export default function UserGuide() {
                   <p className="text-gray-600 mb-4">Watch how customers can use their wallet balance during checkout</p>
                 </div>
                 
-                <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 mx-auto max-w-2xl">
-                  <Users className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                  <p className="text-gray-500 font-medium">Customer Experience Video</p>
-                  <p className="text-gray-400 text-sm mt-2">Video placeholder - will show wallet payment on Magic Checkout</p>
-                </div>
+                <video
+                  src={customerExperienceVideo}
+                  controls
+                  className="rounded-lg shadow-md mx-auto"
+                  style={{ maxWidth: '100%', height: 'auto' }}
+                >
+                  Your browser does not support the video tag.
+                </video>
                 
                 <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
                   <p className="text-blue-800">
