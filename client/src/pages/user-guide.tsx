@@ -17,6 +17,35 @@ export default function UserGuide() {
     window.scrollTo(0, 0);
   }, []);
 
+  // Intersection observer to update active section on scroll
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: '-20% 0px -70% 0px', // Trigger when section is 20% from top
+        threshold: 0.1,
+      }
+    );
+
+    // Observe all sections
+    sections.forEach((section) => {
+      const element = document.getElementById(section.id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [sections]);
+
   const sections = [
     { id: "setup", title: "Setup Instructions", icon: <CheckCircle className="w-5 h-5" /> },
     { id: "issuing", title: "Issuing Refunds", icon: <CreditCard className="w-5 h-5" /> },
