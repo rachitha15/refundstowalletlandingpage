@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,6 +11,11 @@ import customerExperienceVideo from "@assets/payment_experience_1752746423953.mo
 
 export default function UserGuide() {
   const [activeSection, setActiveSection] = useState<string>("setup");
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const sections = [
     { id: "setup", title: "Setup Instructions", icon: <CheckCircle className="w-5 h-5" /> },
