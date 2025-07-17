@@ -131,35 +131,35 @@ export default function Home() {
             {/* Merchant Logos */}
             <div className="mb-8">
               <div className="flex flex-wrap justify-center items-center gap-8 mb-4">
-                <div className="grayscale hover:grayscale-0 transition-all duration-300">
+                <div>
                   <img
                     src={swiggyLogo}
                     alt="Swiggy"
                     className="h-12 w-auto"
                   />
                 </div>
-                <div className="grayscale hover:grayscale-0 transition-all duration-300">
+                <div>
                   <img
                     src={zomatoLogo}
                     alt="Zomato"
                     className="h-12 w-auto"
                   />
                 </div>
-                <div className="grayscale hover:grayscale-0 transition-all duration-300">
+                <div>
                   <img
                     src={decathlonLogo}
                     alt="Decathlon"
                     className="h-12 w-auto"
                   />
                 </div>
-                <div className="grayscale hover:grayscale-0 transition-all duration-300">
+                <div>
                   <img
                     src={thirdWaveLogo}
                     alt="Third Wave Coffee"
                     className="h-12 w-auto"
                   />
                 </div>
-                <div className="grayscale hover:grayscale-0 transition-all duration-300">
+                <div>
                   <img
                     src={fnpLogo}
                     alt="Ferns N Petals"
