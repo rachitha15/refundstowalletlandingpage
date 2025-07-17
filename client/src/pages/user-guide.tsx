@@ -6,17 +6,20 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ArrowLeft, CheckCircle, AlertCircle, Phone, Package, CreditCard, FileText, Users, HelpCircle } from "lucide-react";
 import razorpayLogo from "@assets/image_1752737779222.png";
+import demoVideo from "@assets/Final Video_1752744004263.mov";
 
 export default function UserGuide() {
   const [activeSection, setActiveSection] = useState<string>("setup");
 
   const sections = [
+    { id: "index", title: "Index", icon: <FileText className="w-5 h-5" /> },
     { id: "setup", title: "Setup Instructions", icon: <CheckCircle className="w-5 h-5" /> },
     { id: "issuing", title: "Issuing Refunds", icon: <CreditCard className="w-5 h-5" /> },
     { id: "modal", title: "Refund Modal Guide", icon: <Package className="w-5 h-5" /> },
     { id: "errors", title: "Error Handling", icon: <AlertCircle className="w-5 h-5" /> },
     { id: "reconciliation", title: "Reconciliation", icon: <FileText className="w-5 h-5" /> },
     { id: "notifications", title: "Customer Notifications", icon: <Users className="w-5 h-5" /> },
+    { id: "customer-experience", title: "Customer Experience", icon: <Users className="w-5 h-5" /> },
     { id: "faqs", title: "FAQs", icon: <HelpCircle className="w-5 h-5" /> },
   ];
 
@@ -94,7 +97,7 @@ export default function UserGuide() {
             <div className="sticky top-8">
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-lg">Navigation</CardTitle>
+                  <CardTitle className="text-lg">Index</CardTitle>
                 </CardHeader>
                 <CardContent className="p-0">
                   <nav className="space-y-1">
@@ -141,6 +144,38 @@ export default function UserGuide() {
                         <span>{req}</span>
                       </div>
                     ))}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Index */}
+            <Card id="index">
+              <CardHeader>
+                <CardTitle className="text-xl text-razorpay-dark flex items-center gap-2">
+                  <FileText className="w-6 h-6" />
+                  Index
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-3">
+                    <h3 className="font-semibold text-razorpay-dark">Getting Started</h3>
+                    <ul className="space-y-2 text-gray-600">
+                      <li>• <button onClick={() => scrollToSection('setup')} className="text-razorpay-blue hover:underline">Setup Instructions</button></li>
+                      <li>• <button onClick={() => scrollToSection('issuing')} className="text-razorpay-blue hover:underline">Issuing Refunds</button></li>
+                      <li>• <button onClick={() => scrollToSection('modal')} className="text-razorpay-blue hover:underline">Refund Modal Guide</button></li>
+                    </ul>
+                  </div>
+                  <div className="space-y-3">
+                    <h3 className="font-semibold text-razorpay-dark">Operations & Support</h3>
+                    <ul className="space-y-2 text-gray-600">
+                      <li>• <button onClick={() => scrollToSection('errors')} className="text-razorpay-blue hover:underline">Error Handling</button></li>
+                      <li>• <button onClick={() => scrollToSection('reconciliation')} className="text-razorpay-blue hover:underline">Reconciliation</button></li>
+                      <li>• <button onClick={() => scrollToSection('notifications')} className="text-razorpay-blue hover:underline">Customer Notifications</button></li>
+                      <li>• <button onClick={() => scrollToSection('customer-experience')} className="text-razorpay-blue hover:underline">Customer Experience</button></li>
+                      <li>• <button onClick={() => scrollToSection('faqs')} className="text-razorpay-blue hover:underline">FAQs</button></li>
+                    </ul>
                   </div>
                 </div>
               </CardContent>
@@ -384,6 +419,53 @@ export default function UserGuide() {
                 <p className="text-gray-600 mb-4">Customers will receive an SMS like:</p>
                 <div className="bg-gray-100 border rounded-lg p-4 font-mono text-sm">
                   ₹500 refund credited to your Razorpay Wallet by {"{Merchant Name}"} for Order #{"{ID}"}. Balance available: ₹500
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Customer Experience */}
+            <Card id="customer-experience">
+              <CardHeader>
+                <CardTitle className="text-xl text-razorpay-dark flex items-center gap-2">
+                  <Users className="w-6 h-6" />
+                  Customer Experience
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-6">
+                  After receiving wallet credits, customers can seamlessly use their Razorpay Wallet balance as a payment method 
+                  on Magic Checkout for future purchases from your store.
+                </p>
+                
+                <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                  <h3 className="font-semibold text-green-900 mb-3">How it works for customers:</h3>
+                  <ul className="space-y-2 text-green-800">
+                    <li>• Customer receives instant wallet credit notification via SMS</li>
+                    <li>• During checkout, wallet balance appears as payment option</li>
+                    <li>• Customers can use full or partial wallet balance</li>
+                    <li>• Seamless one-click payment experience</li>
+                  </ul>
+                </div>
+
+                <div className="text-center mb-6">
+                  <h3 className="text-lg font-semibold text-razorpay-dark mb-3">See Magic Checkout with Wallet Payment</h3>
+                  <p className="text-gray-600 mb-4">Watch how customers can use their wallet balance during checkout</p>
+                </div>
+                
+                <video
+                  src={demoVideo}
+                  controls
+                  className="rounded-lg shadow-md mx-auto max-w-full h-auto"
+                  style={{ maxHeight: '400px' }}
+                >
+                  Your browser does not support the video tag.
+                </video>
+                
+                <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                  <p className="text-blue-800">
+                    <strong>Pro tip:</strong> Customers with wallet credits are more likely to return and make additional purchases, 
+                    improving customer lifetime value and retention rates.
+                  </p>
                 </div>
               </CardContent>
             </Card>
