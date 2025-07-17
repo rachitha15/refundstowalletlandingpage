@@ -333,46 +333,51 @@ export default function Home() {
             <p className="text-xl text-gray-600">Just 5 simple requirements to get started</p>
           </div>
           
-          <Card className="p-8 shadow-lg">
-            <CardContent className="p-0">
-              <div className="space-y-6">
-                <div className="flex items-center">
-                  <div className="flex-shrink-0 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-4">
-                    <Check className="w-5 h-5 text-white" />
-                  </div>
-                  <span className="text-lg font-medium text-razorpay-dark">Use Shopify</span>
-                </div>
-                
-                <div className="flex items-center">
-                  <div className="flex-shrink-0 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-4">
-                    <Check className="w-5 h-5 text-white" />
-                  </div>
-                  <span className="text-lg font-medium text-razorpay-dark">Use Razorpay Checkout</span>
-                </div>
-                
-                <div className="flex items-center">
-                  <div className="flex-shrink-0 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-4">
-                    <Check className="w-5 h-5 text-white" />
-                  </div>
-                  <span className="text-lg font-medium text-razorpay-dark">Install Razorpay Rewards & Wallets app</span>
-                </div>
-                
-                <div className="flex items-center">
-                  <div className="flex-shrink-0 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-4">
-                    <Check className="w-5 h-5 text-white" />
-                  </div>
-                  <span className="text-lg font-medium text-razorpay-dark">Connect your Razorpay merchant ID</span>
-                </div>
-                
-                <div className="flex items-center">
-                  <div className="flex-shrink-0 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-4">
-                    <Check className="w-5 h-5 text-white" />
-                  </div>
-                  <span className="text-lg font-medium text-razorpay-dark">Click "Refund to Wallet" on your order page. Done.</span>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="grid gap-6">
+            <div className="flex items-center justify-between">
+              <Card className="p-6 bg-blue-50 border-2 border-blue-200 flex-1">
+                <CardContent className="p-0 text-center">
+                  <div className="text-3xl mb-2">🛍️</div>
+                  <h3 className="font-semibold text-razorpay-dark">Use Shopify</h3>
+                </CardContent>
+              </Card>
+              <div className="text-2xl text-gray-400 mx-4">→</div>
+              <Card className="p-6 bg-green-50 border-2 border-green-200 flex-1">
+                <CardContent className="p-0 text-center">
+                  <div className="text-3xl mb-2">💳</div>
+                  <h3 className="font-semibold text-razorpay-dark">Use Razorpay Checkout</h3>
+                </CardContent>
+              </Card>
+              <div className="text-2xl text-gray-400 mx-4">→</div>
+              <Card className="p-6 bg-purple-50 border-2 border-purple-200 flex-1">
+                <CardContent className="p-0 text-center">
+                  <div className="text-3xl mb-2">⚡</div>
+                  <h3 className="font-semibold text-razorpay-dark">Install App</h3>
+                </CardContent>
+              </Card>
+            </div>
+            
+            <div className="flex items-center justify-center">
+              <div className="text-2xl text-gray-400">↓</div>
+            </div>
+            
+            <div className="flex items-center justify-between">
+              <Card className="p-6 bg-orange-50 border-2 border-orange-200 flex-1">
+                <CardContent className="p-0 text-center">
+                  <div className="text-3xl mb-2">🔗</div>
+                  <h3 className="font-semibold text-razorpay-dark">Connect Merchant ID</h3>
+                </CardContent>
+              </Card>
+              <div className="text-2xl text-gray-400 mx-4">→</div>
+              <Card className="p-6 bg-green-50 border-2 border-green-200 flex-1">
+                <CardContent className="p-0 text-center">
+                  <div className="text-3xl mb-2">🎉</div>
+                  <h3 className="font-semibold text-razorpay-dark">Start Refunding!</h3>
+                </CardContent>
+              </Card>
+              <div className="flex-1"></div>
+            </div>
+          </div>
         </div>
       </section>
 
