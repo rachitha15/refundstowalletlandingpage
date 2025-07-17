@@ -70,7 +70,7 @@ export default function Home() {
                   href="https://apps.shopify.com/razorpay-rewards-gift-cards"
                   className="bg-razorpay-cta text-white px-6 py-2 rounded text-sm font-semibold hover:bg-razorpay-cta transition-colors flex items-center gap-2"
                 >
-                  Install Shopify App
+                  Install App
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
@@ -111,7 +111,7 @@ export default function Home() {
                 href="https://apps.shopify.com/razorpay-rewards-gift-cards"
                 className="block mx-3 my-2 bg-razorpay-cta text-white px-6 py-2 rounded text-sm font-semibold text-center flex items-center justify-center gap-2"
               >
-                Install Shopify App
+                Install App
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>
@@ -127,7 +127,7 @@ export default function Home() {
               Turn Refunds into Repeat Customers — <span className="text-razorpay-cta">Instantly.</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto font-light">
-              Refund to your brand wallet powered by Razorpay. No setup. No Cost. Just faster refunds, better retention.
+              Refund to Razorpay Wallet is now live for all Shopify merchants using Razorpay Checkout. No setup. No cost. Just faster refunds, better retention.
             </p>
             
             {/* Merchant Logos */}
