@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ArrowLeft, CheckCircle, AlertCircle, Phone, Package, CreditCard, FileText, Users, HelpCircle } from "lucide-react";
 import razorpayLogo from "@assets/image_1752737779222.png";
+import refundModalVideo from "@assets/Refund modal experience_1752746292898.mov";
 
 export default function UserGuide() {
   const [activeSection, setActiveSection] = useState<string>("setup");
@@ -320,16 +321,19 @@ export default function UserGuide() {
                   </div>
                 </div>
                 
-                {/* Refund Modal Demo Video Placeholder */}
+                {/* Refund Modal Demo Video */}
                 <div className="mt-8 text-center">
                   <h3 className="text-lg font-semibold text-razorpay-dark mb-3">See the Refund Modal in Action</h3>
                   <p className="text-gray-600 mb-4">Watch step-by-step demo of processing refund to customer's wallet</p>
                   
-                  <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 mx-auto max-w-2xl">
-                    <Package className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                    <p className="text-gray-500 font-medium">Refund Modal Demo Video</p>
-                    <p className="text-gray-400 text-sm mt-2">Video placeholder - will be replaced with actual demo</p>
-                  </div>
+                  <video
+                    src={refundModalVideo}
+                    controls
+                    className="rounded-lg shadow-md mx-auto"
+                    style={{ maxWidth: '100%', height: 'auto' }}
+                  >
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </CardContent>
             </Card>
