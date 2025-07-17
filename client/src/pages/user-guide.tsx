@@ -174,8 +174,7 @@ export default function UserGuide() {
                   <div className="border-l-4 border-razorpay-blue pl-4">
                     <h3 className="font-semibold text-razorpay-dark mb-2">2. Connect Your Razorpay Account</h3>
                     <p className="text-gray-600">
-                      Once installed, open the app and click on <strong>"Connect your Razorpay Merchant ID"</strong>.<br />
-                      Log in with your Razorpay credentials to link your account.
+                      Once installed, open the app and click on <strong>"Connect your Razorpay account"</strong>.
                     </p>
                   </div>
 
@@ -427,7 +426,6 @@ export default function UserGuide() {
                   <ul className="space-y-2 text-green-800">
                     <li>• Customer receives instant wallet credit notification via SMS</li>
                     <li>• During checkout, wallet balance appears as payment option</li>
-                    <li>• Customers can use full or partial wallet balance</li>
                     <li>• Seamless one-click payment experience</li>
                   </ul>
                 </div>
