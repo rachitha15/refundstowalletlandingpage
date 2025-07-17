@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Menu, X, Check } from "lucide-react";
-import RazorpayLogo from "@/components/RazorpayLogo";
+import razorpayLogo from "@assets/Razorpay Logo - Light_1752736444871.png";
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -32,7 +32,11 @@ export default function Home() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <RazorpayLogo className="h-8 w-auto" />
+                <img 
+                  src={razorpayLogo} 
+                  alt="Razorpay" 
+                  className="h-8 w-auto"
+                />
               </div>
             </div>
             <div className="hidden md:block">
