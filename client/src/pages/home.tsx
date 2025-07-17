@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Menu, X, Check, ArrowRight } from "lucide-react";
+import { Menu, X, Check, ArrowRight, ChevronDown, ChevronUp, ShoppingCart, Navigation, ClipboardList, Wallet, MessageCircle } from "lucide-react";
 import razorpayLogo from "@assets/image_1752737779222.png";
 import thirdWaveLogo from "@assets/image_1752742451146.png";
 import zomatoLogo from "@assets/zomato logo_1752742528720.png";
@@ -14,6 +14,7 @@ import demoVideo from "@assets/Final Video_1752744004263.mov";
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [expandedStep, setExpandedStep] = useState<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +32,66 @@ export default function Home() {
     }
     setIsMobileMenuOpen(false);
   };
+
+  const toggleStep = (stepNumber: number) => {
+    setExpandedStep(expandedStep === stepNumber ? null : stepNumber);
+  };
+
+  const steps = [
+    {
+      number: 1,
+      icon: ShoppingCart,
+      title: "Customer cancels/returns",
+      summary: "Customer initiates return or cancellation process",
+      details: [
+        "Customer contacts support or uses self-service portal",
+        "Return request is created with order details",
+        "Customer provides reason for return/cancellation",
+        "System validates return eligibility and timelines"
+      ]
+    },
+    {
+      number: 2,
+      icon: Navigation,
+      title: "Navigate to Shopify orders page",
+      summary: "Choose More Actions > Wallet refund",
+      details: [
+        "Go to Shopify Admin > Orders section",
+        "Find the specific order requiring refund",
+        "Click 'More Actions' dropdown menu",
+        "Select 'Wallet refund' option from the list",
+        "System opens refund processing interface"
+      ]
+    },
+    {
+      number: 3,
+      icon: ClipboardList,
+      title: "Select items & add details",
+      summary: "Choose items, reason, restock option, add notes",
+      details: [
+        "Select specific items to refund from order",
+        "Choose refund reason from dropdown menu",
+        "Decide whether to restock items automatically",
+        "Add internal notes for record keeping",
+        "Review refund amount and calculations",
+        "Confirm all details before proceeding"
+      ]
+    },
+    {
+      number: 4,
+      icon: Wallet,
+      title: "Instant wallet credit",
+      summary: "Customer gets SMS, wallet updated instantly",
+      details: [
+        "Refund processed immediately to customer wallet",
+        "SMS notification sent to customer's phone",
+        "Customer receives wallet credit confirmation",
+        "Wallet balance updated in real-time",
+        "Customer can use credit for future purchases",
+        "Transaction history updated for both parties"
+      ]
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -232,33 +293,70 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-razorpay-dark mb-4">How It Works</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Simple, seamless refund process in 4 easy steps</p>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Click on each step to explore the detailed process</p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-razorpay-blue text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
-              <h3 className="text-lg font-semibold text-razorpay-dark mb-2">Customer cancels/returns</h3>
-              <p className="text-gray-600">Customer initiates return or cancellation process</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-razorpay-blue text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
-              <h3 className="text-lg font-semibold text-razorpay-dark mb-2">Navigate to Shopify orders page</h3>
-              <p className="text-gray-600">Choose More Actions &gt; Wallet refund</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-razorpay-blue text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
-              <h3 className="text-lg font-semibold text-razorpay-dark mb-2">Select items & add details</h3>
-              <p className="text-gray-600">Choose items, reason, restock option, add notes</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-razorpay-blue text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">4</div>
-              <h3 className="text-lg font-semibold text-razorpay-dark mb-2">Instant wallet credit</h3>
-              <p className="text-gray-600">Customer gets SMS, wallet updated instantly</p>
-            </div>
+          <div className="max-w-4xl mx-auto mb-16">
+            {steps.map((step, index) => {
+              const IconComponent = step.icon;
+              const isExpanded = expandedStep === step.number;
+              
+              return (
+                <Card 
+                  key={step.number} 
+                  className={`mb-4 cursor-pointer transition-all duration-300 hover:shadow-lg ${
+                    isExpanded ? 'ring-2 ring-razorpay-blue shadow-xl' : ''
+                  }`}
+                  onClick={() => toggleStep(step.number)}
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-4">
+                        <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold transition-all duration-300 ${
+                          isExpanded ? 'bg-razorpay-cta scale-110' : 'bg-razorpay-blue'
+                        }`}>
+                          {step.number}
+                        </div>
+                        <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+                          isExpanded ? 'bg-razorpay-light text-razorpay-blue' : 'bg-gray-100 text-gray-600'
+                        }`}>
+                          <IconComponent className="w-5 h-5" />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className={`text-lg font-semibold transition-colors duration-300 ${
+                            isExpanded ? 'text-razorpay-dark' : 'text-razorpay-dark'
+                          }`}>
+                            {step.title}
+                          </h3>
+                          <p className="text-gray-600 text-sm mt-1">{step.summary}</p>
+                        </div>
+                      </div>
+                      <div className={`transition-transform duration-300 ${
+                        isExpanded ? 'rotate-180' : ''
+                      }`}>
+                        <ChevronDown className="w-5 h-5 text-gray-400" />
+                      </div>
+                    </div>
+                    
+                    {isExpanded && (
+                      <div className="mt-6 pl-16 transition-all duration-300">
+                        <div className="bg-razorpay-light rounded-lg p-4">
+                          <h4 className="font-semibold text-razorpay-dark mb-3">Step Details:</h4>
+                          <ul className="space-y-2">
+                            {step.details.map((detail, detailIndex) => (
+                              <li key={detailIndex} className="flex items-start space-x-2">
+                                <Check className="w-4 h-4 text-razorpay-blue mt-0.5 flex-shrink-0" />
+                                <span className="text-gray-700 text-sm">{detail}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
           
           {/* Demo Video */}
