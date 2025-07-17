@@ -475,13 +475,15 @@ export default function Home() {
           <div className="text-6xl mb-6">📘</div>
           <h2 className="text-3xl md:text-4xl font-bold text-razorpay-dark mb-4">Need step-by-step help?</h2>
           <p className="text-xl text-gray-600 mb-8">Check out our comprehensive user guide for detailed instructions</p>
-          <Button
-            variant="outline"
-            size="lg"
-            className="bg-white text-razorpay-blue border-razorpay-blue hover:bg-gray-50 text-lg px-8 py-4 shadow-md"
-          >
-            User Guide for Refund to Wallet
-          </Button>
+          <Link href="/user-guide">
+            <Button
+              variant="outline"
+              size="lg"
+              className="bg-white text-razorpay-blue border-razorpay-blue hover:bg-gray-50 text-lg px-8 py-4 shadow-md"
+            >
+              User Guide for Refund to Wallet
+            </Button>
+          </Link>
         </div>
       </section>
 
