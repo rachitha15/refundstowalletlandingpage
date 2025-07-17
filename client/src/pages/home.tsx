@@ -9,6 +9,7 @@ import swiggyLogo from "@assets/Swiggy_logo_1752742528721.png";
 import twcLogo from "@assets/TWC_logo_without_R-01_1752742528721.png";
 import decathlonLogo from "@assets/Decathlon_1752742585148.png";
 import fnpLogo from "@assets/fnplogo_1752742615072.png";
+import demoVideo from "@assets/Final Video_1752744004263.mov";
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -261,18 +262,21 @@ export default function Home() {
             </div>
           </div>
           
-          {/* Screenshot Placeholder */}
+          {/* Demo Video */}
           <Card className="p-8 shadow-lg">
             <CardContent className="p-0">
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-semibold text-razorpay-dark mb-2">See It In Action</h3>
-                <p className="text-gray-600">The refund modal in your Shopify admin</p>
+                <p className="text-gray-600">Process refunds to wallet with 2 clicks</p>
               </div>
-              <img
-                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&h=600"
-                alt="Refund modal interface"
+              <video
+                src={demoVideo}
+                controls
                 className="rounded-lg shadow-md mx-auto max-w-full h-auto"
-              />
+                style={{ maxHeight: '500px' }}
+              >
+                Your browser does not support the video tag.
+              </video>
             </CardContent>
           </Card>
         </div>
