@@ -500,10 +500,7 @@ export default function Home() {
             <ArrowRight className="w-5 h-5" />
           </a>
           <p className="text-gray-400">
-            Need help? Contact your Razorpay account manager or write to{' '}
-            <a href="mailto:magic@razorpay.com" className="text-razorpay-accent hover:underline">
-              magic@razorpay.com
-            </a>
+            Need help? Contact your Razorpay account manager.
           </p>
         </div>
       </section>
