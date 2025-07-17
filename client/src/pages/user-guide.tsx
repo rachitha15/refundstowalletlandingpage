@@ -12,6 +12,17 @@ import customerExperienceVideo from "@assets/payment_experience_1752746423953.mo
 export default function UserGuide() {
   const [activeSection, setActiveSection] = useState<string>("setup");
 
+  const sections = [
+    { id: "setup", title: "Setup Instructions", icon: <CheckCircle className="w-5 h-5" /> },
+    { id: "issuing", title: "Issuing Refunds", icon: <CreditCard className="w-5 h-5" /> },
+    { id: "modal", title: "Refund Modal Guide", icon: <Package className="w-5 h-5" /> },
+    { id: "errors", title: "Error Handling", icon: <AlertCircle className="w-5 h-5" /> },
+    { id: "reconciliation", title: "Reconciliation", icon: <FileText className="w-5 h-5" /> },
+    { id: "notifications", title: "Customer Notifications", icon: <Users className="w-5 h-5" /> },
+    { id: "customer-experience", title: "Customer Experience", icon: <Users className="w-5 h-5" /> },
+    { id: "faqs", title: "FAQs", icon: <HelpCircle className="w-5 h-5" /> },
+  ];
+
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -45,17 +56,6 @@ export default function UserGuide() {
       observer.disconnect();
     };
   }, [sections]);
-
-  const sections = [
-    { id: "setup", title: "Setup Instructions", icon: <CheckCircle className="w-5 h-5" /> },
-    { id: "issuing", title: "Issuing Refunds", icon: <CreditCard className="w-5 h-5" /> },
-    { id: "modal", title: "Refund Modal Guide", icon: <Package className="w-5 h-5" /> },
-    { id: "errors", title: "Error Handling", icon: <AlertCircle className="w-5 h-5" /> },
-    { id: "reconciliation", title: "Reconciliation", icon: <FileText className="w-5 h-5" /> },
-    { id: "notifications", title: "Customer Notifications", icon: <Users className="w-5 h-5" /> },
-    { id: "customer-experience", title: "Customer Experience", icon: <Users className="w-5 h-5" /> },
-    { id: "faqs", title: "FAQs", icon: <HelpCircle className="w-5 h-5" /> },
-  ];
 
   const prerequisites = [
     "Your store is hosted on Shopify",
