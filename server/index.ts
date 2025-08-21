@@ -3,6 +3,29 @@ import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
+
+// RZP_KEY authentication middleware
+app.use((req: Request, res: Response, next: NextFunction) => {
+  const rzpKey = req.headers['rzp_key'] || req.headers['RZP_KEY'];
+  const expectedKey = process.env.RZP_KEY;
+  
+  // Skip authentication in development mode for now
+  if (app.get('env') === 'development') {
+    return next();
+  }
+  
+  // In production, check authentication for all requests
+  if (!expectedKey) {
+    return res.status(404).json({ error: "Not Found" });
+  }
+  
+  if (rzpKey !== expectedKey) {
+    return res.status(404).json({ error: "Not Found" });
+  }
+  
+  next();
+});
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 

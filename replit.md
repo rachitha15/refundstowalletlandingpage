@@ -79,6 +79,8 @@ Preferred communication style: Simple, everyday language.
 - **DATABASE_URL**: PostgreSQL connection string (required)
 - **NODE_ENV**: Environment mode (development/production)
 - **REPL_ID**: Replit-specific environment detection
+- **RZP_KEY**: Authentication key for API access (required for security)
+- **VITE_RZP_KEY**: Client-side authentication key (should match RZP_KEY)
 
 ### Scripts
 - `dev`: Development server with hot reload
@@ -95,5 +97,20 @@ Preferred communication style: Simple, everyday language.
 4. **Tailwind + shadcn/ui**: Rapid UI development with consistent design system
 5. **Vite Integration**: Fast development with middleware mode for backend integration
 6. **Storage Abstraction**: Interface-based storage allows switching between in-memory and PostgreSQL
+7. **RZP_KEY Authentication**: All endpoints (frontend and backend) require RZP_KEY header for access, returning 404 without proper authentication
 
-The application is designed to be easily deployable on Replit with automatic database provisioning and development tooling integration.
+### Security Implementation
+
+**RZP_KEY Authentication System**: The application implements comprehensive authentication using a custom RZP_KEY header:
+
+1. **Backend Protection**: Express middleware checks for `RZP_KEY` header on ALL requests
+2. **Frontend Protection**: React AuthGuard component verifies authentication before rendering app
+3. **API Integration**: All fetch requests automatically include RZP_KEY header
+4. **404 Response**: Unauthenticated requests receive 404 "Not Found" instead of 401 to obscure the application's existence
+
+**Deployment Requirements**:
+- Set `RZP_KEY` environment variable on server
+- Set `VITE_RZP_KEY` environment variable for client-side (same value as RZP_KEY)
+- Without these keys, the application returns 404 for all routes and APIs
+
+The application is designed to be easily deployable on Replit or external platforms like Render with automatic database provisioning and development tooling integration.
