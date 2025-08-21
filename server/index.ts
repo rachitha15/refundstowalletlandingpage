@@ -4,17 +4,17 @@ import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
 
-// RZP_KEY authentication middleware
+// RZP_KEY authentication middleware - only for API routes in production
 app.use((req: Request, res: Response, next: NextFunction) => {
   const rzpKey = req.headers['rzp_key'] || req.headers['RZP_KEY'];
   const expectedKey = process.env.RZP_KEY;
   
-  // Skip authentication in development mode for now
-  if (app.get('env') === 'development') {
+  // Only enforce authentication for API routes
+  if (!req.path.startsWith('/api')) {
     return next();
   }
   
-  // In production, check authentication for all requests
+  // Require authentication for API routes
   if (!expectedKey) {
     return res.status(404).json({ error: "Not Found" });
   }
@@ -22,7 +22,6 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   if (rzpKey !== expectedKey) {
     return res.status(404).json({ error: "Not Found" });
   }
-  
   next();
 });
 

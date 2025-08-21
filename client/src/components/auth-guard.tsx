@@ -21,11 +21,7 @@ export default function AuthGuard({ children }: AuthGuardProps) {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
 
   useEffect(() => {
-    // Skip authentication in development mode
-    if (import.meta.env.DEV) {
-      setIsAuthenticated(true);
-      return;
-    }
+    // Always check authentication when RZP_KEY is available
     
     // Check if RZP_KEY is available in environment variables
     const rzpKey = import.meta.env.VITE_RZP_KEY;
