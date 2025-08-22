@@ -101,12 +101,12 @@ Preferred communication style: Simple, everyday language.
 
 ### Security Implementation
 
-**RZP_KEY Authentication System**: The application implements comprehensive authentication using a custom RZP_KEY header:
+**RZP_KEY Authentication System**: The application implements comprehensive header-based authentication using a custom RZP_KEY header:
 
-1. **Backend Protection**: Express middleware checks for `RZP_KEY` header on ALL requests
-2. **Frontend Protection**: React AuthGuard component verifies authentication before rendering app
-3. **API Integration**: All fetch requests automatically include RZP_KEY header
-4. **404 Response**: Unauthenticated requests receive 404 "Not Found" instead of 401 to obscure the application's existence
+1. **Complete Backend Protection**: Express middleware checks for `RZP_KEY` header on ALL requests (root, endpoints, static files)
+2. **API Integration**: All fetch requests automatically include RZP_KEY header
+3. **404 Response**: Unauthenticated requests receive 404 "Not Found" instead of 401 to obscure the application's existence
+4. **Reverse Proxy Ready**: Designed for use with reverse proxy where end users never hit Replit URL directly
 
 **Deployment Requirements**:
 - Set `RZP_KEY` environment variable on server
