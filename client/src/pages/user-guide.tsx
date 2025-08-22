@@ -103,14 +103,6 @@ export default function UserGuide() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Prototype Disclaimer Banner */}
-      <div className="bg-red-600 text-white py-3 px-4 text-center sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-sm font-medium">
-            🚨 PROTOTYPE ONLY - This is a non-functional design prototype for demonstration only. Please do not enter any real personal or financial information.
-          </p>
-        </div>
-      </div>
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -125,10 +117,7 @@ export default function UserGuide() {
               <Separator orientation="vertical" className="h-6" />
               <div className="flex items-center gap-3">
                 <img src={razorpayLogo} alt="Razorpay" className="h-8 w-auto" />
-                <div className="flex items-center gap-2">
-                  <h1 className="text-xl font-semibold text-razorpay-dark">Refund to Wallet User Guide</h1>
-                  <span className="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">PROTOTYPE</span>
-                </div>
+                <h1 className="text-xl font-semibold text-razorpay-dark">Refund to Wallet User Guide</h1>
               </div>
             </div>
           </div>

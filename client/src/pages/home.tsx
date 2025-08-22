@@ -61,16 +61,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Prototype Disclaimer Banner */}
-      <div className="bg-red-600 text-white py-3 px-4 text-center sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-sm font-medium">
-            🚨 PROTOTYPE ONLY - This is a non-functional design prototype for demonstration only. Please do not enter any real personal or financial information.
-          </p>
-        </div>
-      </div>
       {/* Sticky Navigation */}
-      <nav className="sticky top-3 z-40 bg-white shadow-md">
+      <nav className="sticky top-0 z-50 bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
@@ -158,11 +150,6 @@ export default function Home() {
       <section className="relative bg-gradient-to-br from-razorpay-light to-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="mb-4">
-              <span className="inline-block bg-yellow-100 text-yellow-800 text-sm font-semibold px-3 py-1 rounded-full mb-4">
-                PROTOTYPE DEMO
-              </span>
-            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-razorpay-dark mb-6">
               Turn Refunds into Repeat Customers — <span className="text-razorpay-cta">Instantly.</span>
             </h1>
@@ -209,7 +196,7 @@ export default function Home() {
                   />
                 </div>
               </div>
-              <p className="text-sm text-gray-500">Demo with fictional brand examples. Now available for all Shopify merchants.</p>
+              <p className="text-sm text-gray-500">Trusted by leading brands. Now available for all Shopify merchants.</p>
             </div>
             
             <a
