@@ -1,0 +1,59 @@
+The Golden Rules: What's OK and What's Not
+To keep things safe, please follow these simple rules.
+✅ What You Should Do
+Follow Security Process: Replit Prototype Apps Deployment Plan
+Use Fake Data Only: Your prototype must only use completely fabricated data. Think fake names, made-up email addresses (user1@example.com), and imaginary numbers.
+Focus on UI/UX: Concentrate on demonstrating the user interface (how it looks) and the user experience (how it feels to navigate).
+Keep it Simple: Build just enough to get your idea across.
+Auto-expiry
+ Prototypes must expire in 15 days or get reviewed for renewal.
+Internal registry
+Update the internal registry (Replit Prototype Inventory) of active prototypes, owners, purpose, and expiry date.
+❌ What You Must NEVER Do
+No Real Customer Data: Never use any real customer information. This includes, but is not limited to:
+Names, email addresses, phone numbers
+Aadhaar numbers, PAN cards
+Bank account numbers, credit/debit card info
+Usernames or passwords
+No Company Secrets/internal data: Never put 
+internal credentials like API keys, passwords, or access tokens into your prototype's code.
+Company internal data - email, phone numbers, employee IDs, BU/team names etc
+No Real Connections: Never connect your prototype to any of the company's internal systems, databases, or APIs. The prototype must be completely standalone.
+No Real Transactions: The prototype cannot perform any real financial transactions or move actual money.
+No assumption that this can be “promoted to production”
+No storing or processing of any real data
+Restrict sharing the links to over public channels
+The most critical risk is a data leak. Using a prototype as a stepping stone to a full application without a security review is a major bypass of our development process. Any prototype found violating these rules will be taken down immediately.
+How to Share Prototypes Safely
+When your prototype is ready for feedback, you need to share it in a controlled way.
+Add a Disclaimer: Place a clear, visible banner or pop-up on your prototype that says:
+"This is a non-functional design prototype for demonstration only. Please do not enter any real personal or financial information."
+Share Directly: Send the Razorpay prototype link (Do Not Share the Replit link) directly to a specific, limited group of trusted customers you are engaging for feedback. Avoid posting the link on public forums or social media. Securely share the secret to access the link
+Time-box Access: Prototypes should be considered temporary. Plan to take them down or archive them after your feedback cycle is complete (e.g., within 15-30 days).
+Basic Safety Checks
+Before you share any prototype, run through this quick checklist. 🛡️
+The "No Real Data" Pledge: Confirm on the Security Ticket that your prototype contains zero real customer or company data.
+Peer Review: Ask another Product Manager / Peer to quickly review your prototype. A fresh pair of eyes can spot if it accidentally asks for sensitive information or looks too much like a real, live application.
+Clear Naming: All prototype projects in Replit must be named with a proto- prefix. For example: proto-new-dashboard-v1. This helps us identify and track all prototypes.
+🔹 Basic Security Checklist for Prototypes
+Even in a fast-track setup, some basic controls must be followed:
+✅ Check
+Description
+🔒 No secrets
+No hardcoded tokens, keys, credentials
+🧪 Fake data only
+Use dummy/fake data — never customer or org data
+📶 No integrations
+Don’t connect to any razorpay assets
+🚫 No storage
+Don’t store form data, uploads, or cookies
+📛 Clear labeling
+UI must state clearly “Prototype Only”
+⏳ Auto-expiry
+Should be removed/reviewed every 15 days
+
+
+Clear DB every week
+🗃️ Registry
+All prototypes logged with owner/contact/review info
+
