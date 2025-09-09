@@ -14,14 +14,6 @@ export async function apiRequest(
 ): Promise<Response> {
   const headers: Record<string, string> = {};
   
-  // Always add RZP_KEY header - required for all requests
-  const rzpKey = import.meta.env.VITE_RZP_KEY;
-  if (rzpKey) {
-    headers['RZP_KEY'] = rzpKey;
-  } else {
-    // In production, RZP_KEY is required
-    console.error('VITE_RZP_KEY environment variable is missing');
-  }
   
   if (data) {
     headers['Content-Type'] = 'application/json';
@@ -46,14 +38,6 @@ export const getQueryFn: <T>(options: {
   async ({ queryKey }) => {
     const headers: Record<string, string> = {};
     
-    // Always add RZP_KEY header - required for all requests
-    const rzpKey = import.meta.env.VITE_RZP_KEY;
-    if (rzpKey) {
-      headers['RZP_KEY'] = rzpKey;
-    } else {
-      // In production, RZP_KEY is required
-      console.error('VITE_RZP_KEY environment variable is missing');
-    }
 
     const res = await fetch(queryKey.join("/") as string, {
       headers,

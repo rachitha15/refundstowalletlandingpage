@@ -4,37 +4,6 @@ import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
 
-// RZP_KEY authentication middleware - ALL requests require authentication
-app.use((req: Request, res: Response, next: NextFunction) => {
-  const rzpKey = req.headers['rzp_key'] || req.headers['RZP_KEY'];
-  const expectedKey = process.env.RZP_KEY;
-  
-  // Skip authentication for Vite development assets only in development mode
-  if (app.get('env') === 'development') {
-    const isViteAsset = req.path.startsWith('/@') ||
-                       req.path.includes('node_modules') ||
-                       req.path.includes('.vite') ||
-                       req.path.includes('hot-update') ||
-                       req.path.includes('__vite') ||
-                       req.path.includes('vite/modulepreload') ||
-                       req.path.endsWith('.map');
-    
-    if (isViteAsset) {
-      return next();
-    }
-  }
-  
-  // Require authentication for ALL other requests
-  if (!expectedKey) {
-    return res.status(404).send('Not Found');
-  }
-  
-  if (rzpKey !== expectedKey) {
-    return res.status(404).send('Not Found');
-  }
-  
-  next();
-});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
