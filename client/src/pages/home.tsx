@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Menu, X, Check, ArrowRight, ShoppingCart, Navigation, ClipboardList, Wallet, MessageCircle } from "lucide-react";
+import { Menu, X, Check, ArrowRight, ShoppingCart, Navigation, ClipboardList, Wallet, MessageCircle, ChevronDown } from "lucide-react";
 import razorpayLogo from "@assets/image_1752737779222.png";
 import thirdWaveLogo from "@assets/image_1752742451146.png";
 import zomatoLogo from "@assets/zomato logo_1752742528720.png";
@@ -14,6 +14,8 @@ import demoVideo from "@assets/Final Video_1752744004263.mov";
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isUserGuideDropdownOpen, setIsUserGuideDropdownOpen] = useState(false);
+  const [isIntegrationsDropdownOpen, setIsIntegrationsDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -88,11 +90,51 @@ export default function Home() {
                 >
                   Who it's For
                 </button>
-                <Link href="/user-guide">
-                  <button className="text-gray-700 hover:text-razorpay-blue px-3 py-2 text-sm font-medium transition-colors">
+                <div className="relative">
+                  <button
+                    onClick={() => setIsUserGuideDropdownOpen(!isUserGuideDropdownOpen)}
+                    className="text-gray-700 hover:text-razorpay-blue px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1"
+                  >
                     User Guide
+                    <ChevronDown className="w-4 h-4" />
                   </button>
-                </Link>
+                  {isUserGuideDropdownOpen && (
+                    <div className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-md shadow-lg z-10 min-w-48">
+                      <Link href="/user-guide">
+                        <button 
+                          className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-razorpay-blue"
+                          onClick={() => setIsUserGuideDropdownOpen(false)}
+                        >
+                          Shopify Admin Guide
+                        </button>
+                      </Link>
+                      <div className="relative">
+                        <button
+                          onClick={() => setIsIntegrationsDropdownOpen(!isIntegrationsDropdownOpen)}
+                          className="flex items-center justify-between w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-razorpay-blue"
+                        >
+                          Integrations
+                          <ChevronDown className="w-4 h-4" />
+                        </button>
+                        {isIntegrationsDropdownOpen && (
+                          <div className="absolute left-full top-0 ml-1 bg-white border border-gray-200 rounded-md shadow-lg z-20 min-w-40">
+                            <Link href="/clickpost-setup">
+                              <button 
+                                className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-razorpay-blue"
+                                onClick={() => {
+                                  setIsIntegrationsDropdownOpen(false);
+                                  setIsUserGuideDropdownOpen(false);
+                                }}
+                              >
+                                Clickpost Setup
+                              </button>
+                            </Link>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                </div>
                 <a
                   href="https://apps.shopify.com/razorpay-rewards-gift-cards"
                   className="bg-razorpay-cta text-white px-6 py-2 rounded text-sm font-semibold hover:bg-razorpay-cta transition-colors flex items-center gap-2"
@@ -129,11 +171,55 @@ export default function Home() {
               >
                 Who it's For
               </button>
-              <Link href="/user-guide">
-                <button className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-razorpay-blue w-full text-left">
+              <div>
+                <button
+                  onClick={() => setIsUserGuideDropdownOpen(!isUserGuideDropdownOpen)}
+                  className="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-razorpay-blue"
+                >
                   User Guide
+                  <ChevronDown className="w-4 h-4" />
                 </button>
-              </Link>
+                {isUserGuideDropdownOpen && (
+                  <div className="pl-6 space-y-1">
+                    <Link href="/user-guide">
+                      <button 
+                        className="block w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-razorpay-blue"
+                        onClick={() => {
+                          setIsUserGuideDropdownOpen(false);
+                          setIsMobileMenuOpen(false);
+                        }}
+                      >
+                        Shopify Admin Guide
+                      </button>
+                    </Link>
+                    <div>
+                      <button
+                        onClick={() => setIsIntegrationsDropdownOpen(!isIntegrationsDropdownOpen)}
+                        className="flex items-center justify-between w-full px-3 py-2 text-sm text-gray-600 hover:text-razorpay-blue"
+                      >
+                        Integrations
+                        <ChevronDown className="w-4 h-4" />
+                      </button>
+                      {isIntegrationsDropdownOpen && (
+                        <div className="pl-6">
+                          <Link href="/clickpost-setup">
+                            <button 
+                              className="block w-full text-left px-3 py-2 text-sm text-gray-500 hover:text-razorpay-blue"
+                              onClick={() => {
+                                setIsIntegrationsDropdownOpen(false);
+                                setIsUserGuideDropdownOpen(false);
+                                setIsMobileMenuOpen(false);
+                              }}
+                            >
+                              Clickpost Setup
+                            </button>
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
               <a
                 href="https://apps.shopify.com/razorpay-rewards-gift-cards"
                 className="block mx-3 my-2 bg-razorpay-cta text-white px-6 py-2 rounded text-sm font-semibold text-center flex items-center justify-center gap-2"
