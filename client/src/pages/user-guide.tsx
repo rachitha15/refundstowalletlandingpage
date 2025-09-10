@@ -106,18 +106,22 @@ export default function UserGuide() {
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center gap-4">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-4 sm:py-0 sm:h-16 gap-4 sm:gap-0">
+            <div className="flex items-center gap-2 sm:gap-4 min-w-0">
               <Link href="/">
-                <Button variant="ghost" size="sm" className="flex items-center gap-2">
+                <Button variant="ghost" size="sm" className="flex items-center gap-2 flex-shrink-0">
                   <ArrowLeft className="w-4 h-4" />
-                  Back to Home
+                  <span className="hidden sm:inline">Back to Home</span>
+                  <span className="sm:hidden">Back</span>
                 </Button>
               </Link>
-              <Separator orientation="vertical" className="h-6" />
-              <div className="flex items-center gap-3">
-                <img src={razorpayLogo} alt="Razorpay" className="h-8 w-auto" />
-                <h1 className="text-xl font-semibold text-razorpay-dark">Refund to Wallet User Guide</h1>
+              <Separator orientation="vertical" className="h-6 hidden sm:block" />
+              <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+                <img src={razorpayLogo} alt="Razorpay" className="h-6 sm:h-8 w-auto flex-shrink-0" />
+                <h1 className="text-sm sm:text-lg lg:text-xl font-semibold text-razorpay-dark truncate">
+                  <span className="sm:hidden">User Guide</span>
+                  <span className="hidden sm:inline">Refund to Wallet User Guide</span>
+                </h1>
               </div>
             </div>
           </div>
@@ -125,9 +129,9 @@ export default function UserGuide() {
       </header>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="flex gap-8">
           {/* Sidebar Navigation */}
-          <div className="lg:col-span-1">
+          <div className="hidden lg:block w-64 flex-shrink-0">
             <div className="sticky top-8">
               <Card>
                 <CardHeader>
@@ -154,7 +158,7 @@ export default function UserGuide() {
           </div>
 
           {/* Main Content */}
-          <div className="lg:col-span-3 space-y-8">
+          <div className="flex-1 space-y-8">
             {/* Introduction */}
             <Card>
               <CardHeader>
