@@ -128,7 +128,7 @@ export default function ClickpostSetup() {
                     Razorpay Setup Instructions
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-6">
+                <CardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6">
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
                       <div className="flex-shrink-0 w-8 h-8 bg-razorpay-blue text-white rounded-full flex items-center justify-center text-sm font-semibold">
@@ -198,7 +198,7 @@ export default function ClickpostSetup() {
                     Test Refund Process (Mandatory)
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-6">
+                <CardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6">
                   <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
                     <div className="flex items-start gap-3">
                       <AlertCircle className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
@@ -276,7 +276,7 @@ export default function ClickpostSetup() {
                     Clickpost Integration Setup
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-6">
+                <CardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6">
                   <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                     <div className="flex items-start gap-3">
                       <AlertCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
@@ -302,36 +302,36 @@ export default function ClickpostSetup() {
                   </div>
 
                   {/* Additional Resources */}
-                  <div className="mt-8 pt-8 border-t border-gray-200">
-                    <h3 className="text-lg font-semibold text-razorpay-dark mb-4">Additional Resources</h3>
-                    <p className="text-gray-600 mb-4">
+                  <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-gray-200">
+                    <h3 className="text-base sm:text-lg font-semibold text-razorpay-dark mb-3 sm:mb-4">Additional Resources</h3>
+                    <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">
                       For more information about refund operations, customer communications, and experience management, refer to these sections in our Shopify Admin Guide:
                     </p>
-                    <div className="space-y-3">
+                    <div className="space-y-2 sm:space-y-3">
                       <Link href="/user-guide#reconciliation">
-                        <div className="flex items-center gap-3 p-4 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors cursor-pointer">
-                          <FileText className="w-5 h-5 text-razorpay-blue flex-shrink-0" />
-                          <div>
-                            <h4 className="font-semibold text-razorpay-dark">Reconciliation</h4>
-                            <p className="text-sm text-gray-600">Learn how to track and reconcile refund transactions</p>
+                        <div className="flex items-start sm:items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors cursor-pointer">
+                          <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-razorpay-blue flex-shrink-0 mt-0.5 sm:mt-0" />
+                          <div className="min-w-0">
+                            <h4 className="text-sm sm:text-base font-semibold text-razorpay-dark">Reconciliation</h4>
+                            <p className="text-xs sm:text-sm text-gray-600">Learn how to track and reconcile refund transactions</p>
                           </div>
                         </div>
                       </Link>
                       <Link href="/user-guide#notifications">
-                        <div className="flex items-center gap-3 p-4 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors cursor-pointer">
-                          <Users className="w-5 h-5 text-razorpay-blue flex-shrink-0" />
-                          <div>
-                            <h4 className="font-semibold text-razorpay-dark">Customer Notifications</h4>
-                            <p className="text-sm text-gray-600">Understand how customers are notified about refunds</p>
+                        <div className="flex items-start sm:items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors cursor-pointer">
+                          <Users className="w-4 h-4 sm:w-5 sm:h-5 text-razorpay-blue flex-shrink-0 mt-0.5 sm:mt-0" />
+                          <div className="min-w-0">
+                            <h4 className="text-sm sm:text-base font-semibold text-razorpay-dark">Customer Notifications</h4>
+                            <p className="text-xs sm:text-sm text-gray-600">Understand how customers are notified about refunds</p>
                           </div>
                         </div>
                       </Link>
                       <Link href="/user-guide#customer-experience">
-                        <div className="flex items-center gap-3 p-4 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors cursor-pointer">
-                          <Users className="w-5 h-5 text-razorpay-blue flex-shrink-0" />
-                          <div>
-                            <h4 className="font-semibold text-razorpay-dark">Customer Experience</h4>
-                            <p className="text-sm text-gray-600">See how customers interact with their wallet credits</p>
+                        <div className="flex items-start sm:items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors cursor-pointer">
+                          <Users className="w-4 h-4 sm:w-5 sm:h-5 text-razorpay-blue flex-shrink-0 mt-0.5 sm:mt-0" />
+                          <div className="min-w-0">
+                            <h4 className="text-sm sm:text-base font-semibold text-razorpay-dark">Customer Experience</h4>
+                            <p className="text-xs sm:text-sm text-gray-600">See how customers interact with their wallet credits</p>
                           </div>
                         </div>
                       </Link>

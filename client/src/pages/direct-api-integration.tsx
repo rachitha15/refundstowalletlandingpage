@@ -276,20 +276,20 @@ export default function DirectApiIntegration() {
                     Direct API Integration
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-6">
+                <CardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6">
                   {/* Endpoint */}
                   <div>
-                    <h3 className="text-lg font-semibold text-razorpay-dark mb-3">Endpoint</h3>
+                    <h3 className="text-base sm:text-lg font-semibold text-razorpay-dark mb-3">Endpoint</h3>
                     <div className="space-y-3">
                       <div>
-                        <p className="text-sm text-gray-600 mb-1">Test mode:</p>
-                        <code className="block bg-gray-100 text-razorpay-blue px-4 py-2 rounded text-sm font-mono break-all">
+                        <p className="text-xs sm:text-sm text-gray-600 mb-1">Test mode:</p>
+                        <code className="block bg-gray-100 text-razorpay-blue px-3 sm:px-4 py-2 rounded text-xs sm:text-sm font-mono break-all">
                           https://api.razorpay.com/issuinghq/test/v3/engage/transactions/credit
                         </code>
                       </div>
                       <div>
-                        <p className="text-sm text-gray-600 mb-1">Live mode:</p>
-                        <code className="block bg-gray-100 text-razorpay-blue px-4 py-2 rounded text-sm font-mono break-all">
+                        <p className="text-xs sm:text-sm text-gray-600 mb-1">Live mode:</p>
+                        <code className="block bg-gray-100 text-razorpay-blue px-3 sm:px-4 py-2 rounded text-xs sm:text-sm font-mono break-all">
                           https://api.razorpay.com/issuinghq/v3/engage/transactions/credit
                         </code>
                       </div>
@@ -298,27 +298,27 @@ export default function DirectApiIntegration() {
 
                   {/* Purpose */}
                   <div>
-                    <h3 className="text-lg font-semibold text-razorpay-dark mb-2">Purpose</h3>
-                    <p className="text-gray-600">Credits customer wallet with refund value.</p>
+                    <h3 className="text-base sm:text-lg font-semibold text-razorpay-dark mb-2">Purpose</h3>
+                    <p className="text-sm sm:text-base text-gray-600">Credits customer wallet with refund value.</p>
                   </div>
 
                   {/* Headers */}
                   <div>
-                    <h3 className="text-lg font-semibold text-razorpay-dark mb-3">Headers</h3>
-                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 space-y-2 font-mono text-sm">
-                      <div><span className="text-gray-600">Authorization:</span> <span className="text-razorpay-blue">Bearer &lt;oauth_token&gt;</span></div>
-                      <div><span className="text-gray-600">Content-Type:</span> <span className="text-razorpay-blue">application/json</span></div>
+                    <h3 className="text-base sm:text-lg font-semibold text-razorpay-dark mb-3">Headers</h3>
+                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 sm:p-4 space-y-2 font-mono text-xs sm:text-sm break-words">
+                      <div className="break-all"><span className="text-gray-600">Authorization:</span> <span className="text-razorpay-blue">Bearer &lt;oauth_token&gt;</span></div>
+                      <div className="break-all"><span className="text-gray-600">Content-Type:</span> <span className="text-razorpay-blue">application/json</span></div>
                     </div>
                   </div>
 
                   {/* Request Payloads */}
                   <div>
-                    <h3 className="text-lg font-semibold text-razorpay-dark mb-3">Request Payloads</h3>
+                    <h3 className="text-base sm:text-lg font-semibold text-razorpay-dark mb-3">Request Payloads</h3>
                     
                     <div className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-razorpay-dark mb-2">Shopify Merchants</h4>
-                        <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-xs sm:text-sm">
+                        <h4 className="text-sm sm:text-base font-semibold text-razorpay-dark mb-2">Shopify Merchants</h4>
+                        <pre className="bg-gray-900 text-gray-100 p-3 sm:p-4 rounded-lg overflow-x-auto text-xs sm:text-sm">
 {`{
   "email": "abc@example.com",
   "contact": "9663957855",
@@ -335,8 +335,8 @@ export default function DirectApiIntegration() {
                       </div>
 
                       <div>
-                        <h4 className="font-semibold text-razorpay-dark mb-2">Non-Shopify Merchants</h4>
-                        <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-xs sm:text-sm">
+                        <h4 className="text-sm sm:text-base font-semibold text-razorpay-dark mb-2">Non-Shopify Merchants</h4>
+                        <pre className="bg-gray-900 text-gray-100 p-3 sm:p-4 rounded-lg overflow-x-auto text-xs sm:text-sm">
 {`{
   "email": "abc@example.com",
   "contact": "9663957855",
@@ -356,75 +356,77 @@ export default function DirectApiIntegration() {
 
                   {/* Mandatory Fields */}
                   <div>
-                    <h3 className="text-lg font-semibold text-razorpay-dark mb-3">Mandatory Fields</h3>
-                    <div className="overflow-x-auto">
-                      <table className="w-full border-collapse border border-gray-300">
-                        <thead className="bg-gray-100">
-                          <tr>
-                            <th className="border border-gray-300 px-4 py-2 text-left text-sm font-semibold">Field</th>
-                            <th className="border border-gray-300 px-4 py-2 text-left text-sm font-semibold">Type</th>
-                            <th className="border border-gray-300 px-4 py-2 text-left text-sm font-semibold">Description</th>
-                            <th className="border border-gray-300 px-4 py-2 text-left text-sm font-semibold">Validations</th>
-                          </tr>
-                        </thead>
-                        <tbody className="text-sm">
-                          <tr>
-                            <td className="border border-gray-300 px-4 py-2 font-mono text-xs">contact</td>
-                            <td className="border border-gray-300 px-4 py-2">string</td>
-                            <td className="border border-gray-300 px-4 py-2">10-digit mobile number</td>
-                            <td className="border border-gray-300 px-4 py-2">Throws bad request (400) if number is not 10 digit or contact is missing</td>
-                          </tr>
-                          <tr>
-                            <td className="border border-gray-300 px-4 py-2 font-mono text-xs">partner_user_id</td>
-                            <td className="border border-gray-300 px-4 py-2">string</td>
-                            <td className="border border-gray-300 px-4 py-2">Unique customer ID on merchant system/Shopify - if not available, send phone number itself</td>
-                            <td className="border border-gray-300 px-4 py-2">Throws bad request (400) if the parameter is missing</td>
-                          </tr>
-                          <tr>
-                            <td className="border border-gray-300 px-4 py-2 font-mono text-xs">amount</td>
-                            <td className="border border-gray-300 px-4 py-2">int</td>
-                            <td className="border border-gray-300 px-4 py-2">Amount in paisa, minimum of 100 (Re 1)</td>
-                            <td className="border border-gray-300 px-4 py-2">Bad request errors (400) - Minimum 100 (Re 1) or field missing</td>
-                          </tr>
-                          <tr>
-                            <td className="border border-gray-300 px-4 py-2 font-mono text-xs">action</td>
-                            <td className="border border-gray-300 px-4 py-2">string</td>
-                            <td className="border border-gray-300 px-4 py-2">"load" (must be this value)</td>
-                            <td className="border border-gray-300 px-4 py-2">Bad request error (400) - invalid action if anything other than load is passed</td>
-                          </tr>
-                          <tr>
-                            <td className="border border-gray-300 px-4 py-2 font-mono text-xs">currency</td>
-                            <td className="border border-gray-300 px-4 py-2">string</td>
-                            <td className="border border-gray-300 px-4 py-2">"INR"</td>
-                            <td className="border border-gray-300 px-4 py-2">Supports only INR</td>
-                          </tr>
-                          <tr>
-                            <td className="border border-gray-300 px-4 py-2 font-mono text-xs">reference_id</td>
-                            <td className="border border-gray-300 px-4 py-2">string</td>
-                            <td className="border border-gray-300 px-4 py-2">Unique return/transaction identifier - also acts as idempotency key</td>
-                            <td className="border border-gray-300 px-4 py-2">Idempotency key, required field - 400 error if not passed</td>
-                          </tr>
-                          <tr>
-                            <td className="border border-gray-300 px-4 py-2 font-mono text-xs">purpose</td>
-                            <td className="border border-gray-300 px-4 py-2">string</td>
-                            <td className="border border-gray-300 px-4 py-2">"refund" (must be this value)</td>
-                            <td className="border border-gray-300 px-4 py-2">Required field, 400 error if purpose is not passed</td>
-                          </tr>
-                          <tr>
-                            <td className="border border-gray-300 px-4 py-2 font-mono text-xs">notes.order_id</td>
-                            <td className="border border-gray-300 px-4 py-2">string</td>
-                            <td className="border border-gray-300 px-4 py-2">Original order ID from merchant</td>
-                            <td className="border border-gray-300 px-4 py-2">Optional, no errors. But recommended to pass for merchant record/reporting</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                    <h3 className="text-base sm:text-lg font-semibold text-razorpay-dark mb-3">Mandatory Fields</h3>
+                    <div className="overflow-x-auto -mx-4 sm:mx-0">
+                      <div className="inline-block min-w-full align-middle">
+                        <table className="min-w-full border-collapse border border-gray-300">
+                          <thead className="bg-gray-100">
+                            <tr>
+                              <th className="border border-gray-300 px-2 sm:px-4 py-2 text-left text-xs sm:text-sm font-semibold whitespace-nowrap">Field</th>
+                              <th className="border border-gray-300 px-2 sm:px-4 py-2 text-left text-xs sm:text-sm font-semibold whitespace-nowrap">Type</th>
+                              <th className="border border-gray-300 px-2 sm:px-4 py-2 text-left text-xs sm:text-sm font-semibold">Description</th>
+                              <th className="border border-gray-300 px-2 sm:px-4 py-2 text-left text-xs sm:text-sm font-semibold">Validations</th>
+                            </tr>
+                          </thead>
+                          <tbody className="text-xs sm:text-sm">
+                            <tr>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2 font-mono text-xs whitespace-nowrap">contact</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2 whitespace-nowrap">string</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2">10-digit mobile number</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2">Throws bad request (400) if number is not 10 digit or contact is missing</td>
+                            </tr>
+                            <tr>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2 font-mono text-xs whitespace-nowrap">partner_user_id</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2 whitespace-nowrap">string</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2">Unique customer ID on merchant system/Shopify - if not available, send phone number itself</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2">Throws bad request (400) if the parameter is missing</td>
+                            </tr>
+                            <tr>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2 font-mono text-xs whitespace-nowrap">amount</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2 whitespace-nowrap">int</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2">Amount in paisa, minimum of 100 (Re 1)</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2">Bad request errors (400) - Minimum 100 (Re 1) or field missing</td>
+                            </tr>
+                            <tr>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2 font-mono text-xs whitespace-nowrap">action</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2 whitespace-nowrap">string</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2">"load" (must be this value)</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2">Bad request error (400) - invalid action if anything other than load is passed</td>
+                            </tr>
+                            <tr>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2 font-mono text-xs whitespace-nowrap">currency</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2 whitespace-nowrap">string</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2">"INR"</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2">Supports only INR</td>
+                            </tr>
+                            <tr>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2 font-mono text-xs whitespace-nowrap">reference_id</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2 whitespace-nowrap">string</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2">Unique return/transaction identifier - also acts as idempotency key</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2">Idempotency key, required field - 400 error if not passed</td>
+                            </tr>
+                            <tr>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2 font-mono text-xs whitespace-nowrap">purpose</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2 whitespace-nowrap">string</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2">"refund" (must be this value)</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2">Required field, 400 error if purpose is not passed</td>
+                            </tr>
+                            <tr>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2 font-mono text-xs whitespace-nowrap">notes.order_id</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2 whitespace-nowrap">string</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2">Original order ID from merchant</td>
+                              <td className="border border-gray-300 px-2 sm:px-4 py-2">Optional, no errors. But recommended to pass for merchant record/reporting</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
                   </div>
 
                   {/* Success Response */}
                   <div>
-                    <h3 className="text-lg font-semibold text-razorpay-dark mb-3">Success Response</h3>
-                    <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-xs sm:text-sm">
+                    <h3 className="text-base sm:text-lg font-semibold text-razorpay-dark mb-3">Success Response</h3>
+                    <pre className="bg-gray-900 text-gray-100 p-3 sm:p-4 rounded-lg overflow-x-auto text-xs sm:text-sm">
 {`{
   "id": "ientxn_QgC3wXR2Q77wDN",
   "entity": "engage.transaction",
@@ -449,12 +451,12 @@ export default function DirectApiIntegration() {
 
                   {/* Error Responses */}
                   <div>
-                    <h3 className="text-lg font-semibold text-razorpay-dark mb-3">Error Responses</h3>
-                    <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                      <h4 className="font-semibold text-red-900 mb-2">400 Bad Request</h4>
-                      <p className="text-sm text-red-800 mb-3">Description: Invalid amount</p>
-                      <p className="text-sm text-red-800 mb-2">Response:</p>
-                      <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-xs sm:text-sm">
+                    <h3 className="text-base sm:text-lg font-semibold text-razorpay-dark mb-3">Error Responses</h3>
+                    <div className="bg-red-50 border border-red-200 rounded-lg p-3 sm:p-4">
+                      <h4 className="text-sm sm:text-base font-semibold text-red-900 mb-2">400 Bad Request</h4>
+                      <p className="text-xs sm:text-sm text-red-800 mb-3">Description: Invalid amount</p>
+                      <p className="text-xs sm:text-sm text-red-800 mb-2">Response:</p>
+                      <pre className="bg-gray-900 text-gray-100 p-3 sm:p-4 rounded-lg overflow-x-auto text-xs sm:text-sm">
 {`{
   "error": {
     "code": "BAD_REQUEST_ERROR",
@@ -467,36 +469,36 @@ export default function DirectApiIntegration() {
                   </div>
 
                   {/* Additional Resources */}
-                  <div className="mt-8 pt-8 border-t border-gray-200">
-                    <h3 className="text-lg font-semibold text-razorpay-dark mb-4">Additional Resources</h3>
-                    <p className="text-gray-600 mb-4">
+                  <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-gray-200">
+                    <h3 className="text-base sm:text-lg font-semibold text-razorpay-dark mb-3 sm:mb-4">Additional Resources</h3>
+                    <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">
                       For more information about refund operations, customer communications, and experience management, refer to these sections in our Shopify Admin Guide:
                     </p>
-                    <div className="space-y-3">
+                    <div className="space-y-2 sm:space-y-3">
                       <Link href="/user-guide#reconciliation">
-                        <div className="flex items-center gap-3 p-4 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors cursor-pointer">
-                          <FileText className="w-5 h-5 text-razorpay-blue flex-shrink-0" />
-                          <div>
-                            <h4 className="font-semibold text-razorpay-dark">Reconciliation</h4>
-                            <p className="text-sm text-gray-600">Learn how to track and reconcile refund transactions</p>
+                        <div className="flex items-start sm:items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors cursor-pointer">
+                          <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-razorpay-blue flex-shrink-0 mt-0.5 sm:mt-0" />
+                          <div className="min-w-0">
+                            <h4 className="text-sm sm:text-base font-semibold text-razorpay-dark">Reconciliation</h4>
+                            <p className="text-xs sm:text-sm text-gray-600">Learn how to track and reconcile refund transactions</p>
                           </div>
                         </div>
                       </Link>
                       <Link href="/user-guide#notifications">
-                        <div className="flex items-center gap-3 p-4 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors cursor-pointer">
-                          <Users className="w-5 h-5 text-razorpay-blue flex-shrink-0" />
-                          <div>
-                            <h4 className="font-semibold text-razorpay-dark">Customer Notifications</h4>
-                            <p className="text-sm text-gray-600">Understand how customers are notified about refunds</p>
+                        <div className="flex items-start sm:items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors cursor-pointer">
+                          <Users className="w-4 h-4 sm:w-5 sm:h-5 text-razorpay-blue flex-shrink-0 mt-0.5 sm:mt-0" />
+                          <div className="min-w-0">
+                            <h4 className="text-sm sm:text-base font-semibold text-razorpay-dark">Customer Notifications</h4>
+                            <p className="text-xs sm:text-sm text-gray-600">Understand how customers are notified about refunds</p>
                           </div>
                         </div>
                       </Link>
                       <Link href="/user-guide#customer-experience">
-                        <div className="flex items-center gap-3 p-4 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors cursor-pointer">
-                          <Users className="w-5 h-5 text-razorpay-blue flex-shrink-0" />
-                          <div>
-                            <h4 className="font-semibold text-razorpay-dark">Customer Experience</h4>
-                            <p className="text-sm text-gray-600">See how customers interact with their wallet credits</p>
+                        <div className="flex items-start sm:items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors cursor-pointer">
+                          <Users className="w-4 h-4 sm:w-5 sm:h-5 text-razorpay-blue flex-shrink-0 mt-0.5 sm:mt-0" />
+                          <div className="min-w-0">
+                            <h4 className="text-sm sm:text-base font-semibold text-razorpay-dark">Customer Experience</h4>
+                            <p className="text-xs sm:text-sm text-gray-600">See how customers interact with their wallet credits</p>
                           </div>
                         </div>
                       </Link>
