@@ -117,7 +117,7 @@ export default function Home() {
                           <ChevronDown className="w-4 h-4" />
                         </button>
                         {isIntegrationsDropdownOpen && (
-                          <div className="absolute left-full top-0 ml-1 bg-white border border-gray-200 rounded-md shadow-lg z-20 min-w-40">
+                          <div className="absolute left-full top-0 ml-1 bg-white border border-gray-200 rounded-md shadow-lg z-20 min-w-48">
                             <Link href="/clickpost-setup">
                               <button 
                                 className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-razorpay-blue"
@@ -127,6 +127,17 @@ export default function Home() {
                                 }}
                               >
                                 Clickpost Setup
+                              </button>
+                            </Link>
+                            <Link href="/direct-api-integration">
+                              <button 
+                                className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-razorpay-blue"
+                                onClick={() => {
+                                  setIsIntegrationsDropdownOpen(false);
+                                  setIsUserGuideDropdownOpen(false);
+                                }}
+                              >
+                                Direct API Integration
                               </button>
                             </Link>
                           </div>
@@ -201,7 +212,7 @@ export default function Home() {
                         <ChevronDown className="w-4 h-4" />
                       </button>
                       {isIntegrationsDropdownOpen && (
-                        <div className="pl-6">
+                        <div className="pl-6 space-y-1">
                           <Link href="/clickpost-setup">
                             <button 
                               className="block w-full text-left px-3 py-2 text-sm text-gray-500 hover:text-razorpay-blue"
@@ -212,6 +223,18 @@ export default function Home() {
                               }}
                             >
                               Clickpost Setup
+                            </button>
+                          </Link>
+                          <Link href="/direct-api-integration">
+                            <button 
+                              className="block w-full text-left px-3 py-2 text-sm text-gray-500 hover:text-razorpay-blue"
+                              onClick={() => {
+                                setIsIntegrationsDropdownOpen(false);
+                                setIsUserGuideDropdownOpen(false);
+                                setIsMobileMenuOpen(false);
+                              }}
+                            >
+                              Direct API Integration
                             </button>
                           </Link>
                         </div>

@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/home";
 import UserGuide from "@/pages/user-guide";
 import ClickpostSetup from "@/pages/clickpost-setup";
+import DirectApiIntegration from "@/pages/direct-api-integration";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -14,6 +15,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/user-guide" component={UserGuide} />
       <Route path="/clickpost-setup" component={ClickpostSetup} />
+      <Route path="/direct-api-integration" component={DirectApiIntegration} />
       <Route component={NotFound} />
     </Switch>
   );
