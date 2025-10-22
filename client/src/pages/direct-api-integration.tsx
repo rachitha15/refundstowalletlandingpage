@@ -277,23 +277,193 @@ export default function DirectApiIntegration() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
-                    <div className="flex items-start gap-3">
-                      <AlertCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  {/* Endpoint */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-razorpay-dark mb-3">Endpoint</h3>
+                    <div className="space-y-3">
                       <div>
-                        <p className="text-sm text-purple-800">
-                          <strong>Placeholder:</strong> Content for Direct API Integration will be added here.
-                        </p>
+                        <p className="text-sm text-gray-600 mb-1">Test mode:</p>
+                        <code className="block bg-gray-100 text-razorpay-blue px-4 py-2 rounded text-sm font-mono break-all">
+                          https://api.razorpay.com/issuinghq/test/v3/engage/transactions/credit
+                        </code>
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-600 mb-1">Live mode:</p>
+                        <code className="block bg-gray-100 text-razorpay-blue px-4 py-2 rounded text-sm font-mono break-all">
+                          https://api.razorpay.com/issuinghq/v3/engage/transactions/credit
+                        </code>
                       </div>
                     </div>
                   </div>
 
-                  <div className="text-center py-8">
-                    <div className="text-6xl mb-4">📝</div>
-                    <h3 className="text-xl font-semibold text-gray-700 mb-2">Content Coming Soon</h3>
-                    <p className="text-gray-600 mb-6">
-                      Direct API integration documentation will be added to this section shortly.
-                    </p>
+                  {/* Purpose */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-razorpay-dark mb-2">Purpose</h3>
+                    <p className="text-gray-600">Credits customer wallet with refund value.</p>
+                  </div>
+
+                  {/* Headers */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-razorpay-dark mb-3">Headers</h3>
+                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 space-y-2 font-mono text-sm">
+                      <div><span className="text-gray-600">Authorization:</span> <span className="text-razorpay-blue">Bearer &lt;oauth_token&gt;</span></div>
+                      <div><span className="text-gray-600">Content-Type:</span> <span className="text-razorpay-blue">application/json</span></div>
+                    </div>
+                  </div>
+
+                  {/* Request Payloads */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-razorpay-dark mb-3">Request Payloads</h3>
+                    
+                    <div className="space-y-4">
+                      <div>
+                        <h4 className="font-semibold text-razorpay-dark mb-2">Shopify Merchants</h4>
+                        <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-xs sm:text-sm">
+{`{
+  "email": "abc@example.com",
+  "contact": "9663957855",
+  "partner_user_id": "shopify_customer_id", 
+  "amount": 10000,
+  "action": "load",
+  "currency": "INR",
+  "reference_id": "shopify_return_id", // idempotency key
+  "purpose": "refund",
+  "notes": {
+    "order_id": "shopify_order_id"
+  }
+}`}</pre>
+                      </div>
+
+                      <div>
+                        <h4 className="font-semibold text-razorpay-dark mb-2">Non-Shopify Merchants</h4>
+                        <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-xs sm:text-sm">
+{`{
+  "email": "abc@example.com",
+  "contact": "9663957855",
+  "partner_user_id": "9663957855",
+  "amount": 10000,
+  "action": "load",
+  "currency": "INR",
+  "reference_id": "clickpost_return_id", // idempotency key
+  "purpose": "refund",
+  "notes": {
+    "order_id": "merchant_order_id"
+  }
+}`}</pre>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Mandatory Fields */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-razorpay-dark mb-3">Mandatory Fields</h3>
+                    <div className="overflow-x-auto">
+                      <table className="w-full border-collapse border border-gray-300">
+                        <thead className="bg-gray-100">
+                          <tr>
+                            <th className="border border-gray-300 px-4 py-2 text-left text-sm font-semibold">Field</th>
+                            <th className="border border-gray-300 px-4 py-2 text-left text-sm font-semibold">Type</th>
+                            <th className="border border-gray-300 px-4 py-2 text-left text-sm font-semibold">Description</th>
+                            <th className="border border-gray-300 px-4 py-2 text-left text-sm font-semibold">Validations</th>
+                          </tr>
+                        </thead>
+                        <tbody className="text-sm">
+                          <tr>
+                            <td className="border border-gray-300 px-4 py-2 font-mono text-xs">contact</td>
+                            <td className="border border-gray-300 px-4 py-2">string</td>
+                            <td className="border border-gray-300 px-4 py-2">10-digit mobile number</td>
+                            <td className="border border-gray-300 px-4 py-2">Throws bad request (400) if number is not 10 digit or contact is missing</td>
+                          </tr>
+                          <tr>
+                            <td className="border border-gray-300 px-4 py-2 font-mono text-xs">partner_user_id</td>
+                            <td className="border border-gray-300 px-4 py-2">string</td>
+                            <td className="border border-gray-300 px-4 py-2">Unique customer ID on merchant system/Shopify - if not available, send phone number itself</td>
+                            <td className="border border-gray-300 px-4 py-2">Throws bad request (400) if the parameter is missing</td>
+                          </tr>
+                          <tr>
+                            <td className="border border-gray-300 px-4 py-2 font-mono text-xs">amount</td>
+                            <td className="border border-gray-300 px-4 py-2">int</td>
+                            <td className="border border-gray-300 px-4 py-2">Amount in paisa, minimum of 100 (Re 1)</td>
+                            <td className="border border-gray-300 px-4 py-2">Bad request errors (400) - Minimum 100 (Re 1) or field missing</td>
+                          </tr>
+                          <tr>
+                            <td className="border border-gray-300 px-4 py-2 font-mono text-xs">action</td>
+                            <td className="border border-gray-300 px-4 py-2">string</td>
+                            <td className="border border-gray-300 px-4 py-2">"load" (must be this value)</td>
+                            <td className="border border-gray-300 px-4 py-2">Bad request error (400) - invalid action if anything other than load is passed</td>
+                          </tr>
+                          <tr>
+                            <td className="border border-gray-300 px-4 py-2 font-mono text-xs">currency</td>
+                            <td className="border border-gray-300 px-4 py-2">string</td>
+                            <td className="border border-gray-300 px-4 py-2">"INR"</td>
+                            <td className="border border-gray-300 px-4 py-2">Supports only INR</td>
+                          </tr>
+                          <tr>
+                            <td className="border border-gray-300 px-4 py-2 font-mono text-xs">reference_id</td>
+                            <td className="border border-gray-300 px-4 py-2">string</td>
+                            <td className="border border-gray-300 px-4 py-2">Unique return/transaction identifier - also acts as idempotency key</td>
+                            <td className="border border-gray-300 px-4 py-2">Idempotency key, required field - 400 error if not passed</td>
+                          </tr>
+                          <tr>
+                            <td className="border border-gray-300 px-4 py-2 font-mono text-xs">purpose</td>
+                            <td className="border border-gray-300 px-4 py-2">string</td>
+                            <td className="border border-gray-300 px-4 py-2">"refund" (must be this value)</td>
+                            <td className="border border-gray-300 px-4 py-2">Required field, 400 error if purpose is not passed</td>
+                          </tr>
+                          <tr>
+                            <td className="border border-gray-300 px-4 py-2 font-mono text-xs">notes.order_id</td>
+                            <td className="border border-gray-300 px-4 py-2">string</td>
+                            <td className="border border-gray-300 px-4 py-2">Original order ID from merchant</td>
+                            <td className="border border-gray-300 px-4 py-2">Optional, no errors. But recommended to pass for merchant record/reporting</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  {/* Success Response */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-razorpay-dark mb-3">Success Response</h3>
+                    <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-xs sm:text-sm">
+{`{
+  "id": "ientxn_QgC3wXR2Q77wDN",
+  "entity": "engage.transaction",
+  "amount": 10000,
+  "type": "credit",
+  "currency": "INR",
+  "giftcard": null,
+  "wallet": {
+    "user_id": "iuser_QgC2Ssl3WStW9p",
+    "program_id": "iprog_QaFpbI3UFnDl3n",
+    "balance": 50000
+  },
+  "reference_id": "clickpost_return_id",
+  "source_id": "iload_QgC3wWUU92qf9x",
+  "notes": {
+    "order_id": "merchant_order_id"
+  },
+  "linked_transaction_id": null,
+  "created_at": 1749711418
+}`}</pre>
+                  </div>
+
+                  {/* Error Responses */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-razorpay-dark mb-3">Error Responses</h3>
+                    <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                      <h4 className="font-semibold text-red-900 mb-2">400 Bad Request</h4>
+                      <p className="text-sm text-red-800 mb-3">Description: Invalid amount</p>
+                      <p className="text-sm text-red-800 mb-2">Response:</p>
+                      <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-xs sm:text-sm">
+{`{
+  "error": {
+    "code": "BAD_REQUEST_ERROR",
+    "description": "amount should be at least 1 rupee",
+    "field": "amount",
+    "reason": "invalid_amount"
+  }
+}`}</pre>
+                    </div>
                   </div>
                 </CardContent>
               </Card>

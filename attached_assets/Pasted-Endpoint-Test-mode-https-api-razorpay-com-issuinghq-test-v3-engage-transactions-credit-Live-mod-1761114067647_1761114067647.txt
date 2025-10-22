@@ -1,0 +1,131 @@
+Endpoint
+
+Test mode: https://api.razorpay.com/issuinghq/test/v3/engage/transactions/credit
+
+Live mode:
+https://api.razorpay.com/issuinghq/v3/engage/transactions/credit
+
+
+Purpose
+Credits customer wallet with refund value.
+Headers
+
+Authorization: Bearer <oauth_token>
+Content-Type: application/json
+
+Request Payloads
+
+Shopify Merchants
+
+{
+  "email": "abc@example.com",
+  "contact": "9663957855",
+  "partner_user_id": "shopify_customer_id", 
+  "amount": 10000,
+  "action": "load",
+  "currency": "INR",
+  "reference_id": "shopify_return_id",// idempotency key
+  "purpose": "refund",
+  "notes": {
+    "order_id": "shopify_order_id"
+  }
+}
+
+Non-Shopify merchants
+
+
+{
+  "email": "abc@example.com",
+  "contact": "9663957855",
+  "partner_user_id": "9663957855",
+  "amount": 10000,
+  "action": "load",
+  "currency": "INR",
+  "reference_id": "clickpost_return_id", // idempotency key
+  "purpose": "refund",
+  "notes": {
+    "order_id": "merchant_order_id"
+  }
+}
+
+Mandatory Fields
+
+
+Field
+Type
+Description
+Validations
+contact
+string
+10-digit mobile number
+Throws bad request (400) if number is not 10 digit or contact is missing
+partner_user_id
+string
+Unique customer ID on merchant system/Shopify - if not available, send phone number itself
+Throws bad request (400) if the parameter is missing
+amount
+int
+Amount in paisa, minimum of 100 (re 1)
+Bad request errors (400) - Minimum 100 (Re 1) or field missing
+action
+string
+"load" (must be this value)
+Bad request error (400) - invalid action if anything other than load is passed
+currency
+string
+"INR"
+Supports only INR
+reference_id
+string
+Unique return/transaction identifier - also acts as idempotency key
+Idempotency key, required field - 400 error if not passed
+purpose
+string
+"refund" (must be this value)
+Required field, 400 error if purpose is not passed. 
+notes.order_id
+string
+Original order ID from merchant
+Optional, no errors. But recommended to pass for merchant record/reporting
+
+
+
+Success Response
+
+{
+   "id": "ientxn_QgC3wXR2Q77wDN",
+   "entity": "engage.transaction",
+   "amount": 10000,
+   "type": "credit",
+   "currency": "INR",
+   "giftcard": null,
+   "wallet": {
+       "user_id": "iuser_QgC2Ssl3WStW9p",
+       "program_id": "iprog_QaFpbI3UFnDl3n",
+       "balance": 50000
+   },
+   "reference_id": "clickpost_return_id",
+   "source_id": "iload_QgC3wWUU92qf9x",
+   "notes": {
+    "order_id": "merchant_order_id"
+  }
+   "linked_transaction_id": null,
+   "created_at": 1749711418
+}
+
+Error Responses
+Sample response
+
+
+**400 Bad Request**
+   - Description: Invalid amount
+   - Response:
+     ```json
+     {
+       "error": {
+         "code": "BAD_REQUEST_ERROR",
+         "description": "amount should be at least 1 rupee",
+         "field": "amount",
+         "reason": "invalid_amount"
+       }
+     }
