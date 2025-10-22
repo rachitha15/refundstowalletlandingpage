@@ -118,7 +118,7 @@ export default function DirectApiIntegration() {
           </div>
 
           {/* Main Content */}
-          <div className="flex-1 space-y-8">
+          <div className="flex-1 space-y-6 sm:space-y-8">
             {/* Setup Instructions */}
             <section id="setup">
               <Card>
@@ -128,15 +128,15 @@ export default function DirectApiIntegration() {
                     Razorpay Setup Instructions
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-6">
+                <CardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6">
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
                       <div className="flex-shrink-0 w-8 h-8 bg-razorpay-blue text-white rounded-full flex items-center justify-center text-sm font-semibold">
                         1
                       </div>
                       <div>
-                        <h3 className="font-semibold text-razorpay-dark mb-2">Install the Razorpay Rewards & Wallets App</h3>
-                        <p className="text-gray-600 mb-3">
+                        <h3 className="text-sm sm:text-base font-semibold text-razorpay-dark mb-2">Install the Razorpay Rewards & Wallets App</h3>
+                        <p className="text-sm sm:text-base text-gray-600 mb-3">
                           Visit the Shopify App Store and install the "Razorpay Rewards & Wallets" app on your store.
                         </p>
                         <a
@@ -156,15 +156,15 @@ export default function DirectApiIntegration() {
                         2
                       </div>
                       <div>
-                        <h3 className="font-semibold text-razorpay-dark mb-2">Connect Your Razorpay Account</h3>
-                        <p className="text-gray-600 mb-3">
+                        <h3 className="text-sm sm:text-base font-semibold text-razorpay-dark mb-2">Connect Your Razorpay Account</h3>
+                        <p className="text-sm sm:text-base text-gray-600 mb-3">
                           Once installed, open the app and connect your Razorpay merchant account. You'll need your Razorpay merchant ID.
                         </p>
-                        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                          <div className="flex items-start gap-3">
-                            <AlertCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                        <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 sm:p-4">
+                          <div className="flex items-start gap-2 sm:gap-3">
+                            <AlertCircle className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 flex-shrink-0 mt-0.5" />
                             <div>
-                              <p className="text-sm text-blue-800">
+                              <p className="text-xs sm:text-sm text-blue-800">
                                 <strong>Important:</strong> Make sure you're using Razorpay Magic Checkout for payment processing on your Shopify store.
                               </p>
                             </div>
@@ -178,8 +178,8 @@ export default function DirectApiIntegration() {
                         3
                       </div>
                       <div>
-                        <h3 className="font-semibold text-razorpay-dark mb-2">Access the Refund Feature</h3>
-                        <p className="text-gray-600">
+                        <h3 className="text-sm sm:text-base font-semibold text-razorpay-dark mb-2">Access the Refund Feature</h3>
+                        <p className="text-sm sm:text-base text-gray-600">
                           Navigate to any order in your Shopify admin. You should now see "Refund to Wallet" option in the "More actions" dropdown on the order page.
                         </p>
                       </div>
@@ -198,12 +198,12 @@ export default function DirectApiIntegration() {
                     Test Refund Process (Mandatory)
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
-                    <div className="flex items-start gap-3">
-                      <AlertCircle className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                <CardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6">
+                  <div className="bg-orange-50 border border-orange-200 rounded-lg p-3 sm:p-4">
+                    <div className="flex items-start gap-2 sm:gap-3">
+                      <AlertCircle className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 flex-shrink-0 mt-0.5" />
                       <div>
-                        <p className="text-sm text-orange-800">
+                        <p className="text-xs sm:text-sm text-orange-800">
                           <strong>Important:</strong> Before setting up Direct API integration, you must complete at least one test refund to wallet. This is mandatory for the integration to work properly.
                         </p>
                       </div>
