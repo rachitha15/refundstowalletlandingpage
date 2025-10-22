@@ -465,6 +465,43 @@ export default function DirectApiIntegration() {
 }`}</pre>
                     </div>
                   </div>
+
+                  {/* Additional Resources */}
+                  <div className="mt-8 pt-8 border-t border-gray-200">
+                    <h3 className="text-lg font-semibold text-razorpay-dark mb-4">Additional Resources</h3>
+                    <p className="text-gray-600 mb-4">
+                      For more information about refund operations, customer communications, and experience management, refer to these sections in our Shopify Admin Guide:
+                    </p>
+                    <div className="space-y-3">
+                      <Link href="/user-guide#reconciliation">
+                        <div className="flex items-center gap-3 p-4 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors cursor-pointer">
+                          <FileText className="w-5 h-5 text-razorpay-blue flex-shrink-0" />
+                          <div>
+                            <h4 className="font-semibold text-razorpay-dark">Reconciliation</h4>
+                            <p className="text-sm text-gray-600">Learn how to track and reconcile refund transactions</p>
+                          </div>
+                        </div>
+                      </Link>
+                      <Link href="/user-guide#notifications">
+                        <div className="flex items-center gap-3 p-4 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors cursor-pointer">
+                          <Users className="w-5 h-5 text-razorpay-blue flex-shrink-0" />
+                          <div>
+                            <h4 className="font-semibold text-razorpay-dark">Customer Notifications</h4>
+                            <p className="text-sm text-gray-600">Understand how customers are notified about refunds</p>
+                          </div>
+                        </div>
+                      </Link>
+                      <Link href="/user-guide#customer-experience">
+                        <div className="flex items-center gap-3 p-4 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors cursor-pointer">
+                          <Users className="w-5 h-5 text-razorpay-blue flex-shrink-0" />
+                          <div>
+                            <h4 className="font-semibold text-razorpay-dark">Customer Experience</h4>
+                            <p className="text-sm text-gray-600">See how customers interact with their wallet credits</p>
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             </section>
